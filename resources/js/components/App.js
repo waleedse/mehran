@@ -33,7 +33,7 @@ function App(props) {
     <BrowserRouter  >
       <div className="main_div">
         <Switch>
-          <Route  path="/adminpanel"  component={AdminSidebar}/>  
+          <Route  path="/adminpanel"  component={AdminSidebar}/>
           <Route  exact path="/"  component={Index}/>
           <Route   path="/Products/:id"  component={Products}/>
           <Route   path="/Product/:id"  component={Product}/>

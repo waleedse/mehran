@@ -8,9 +8,9 @@ export default class Footer extends Component {
           <div className="col-md-2 col-sm-4">
             <div className="footerCol">
               <h5 className="text-bold footerHeadText">Mattress</h5>
-              <p className="footerItemText text-secondary">Chairman</p>
-              <p className="footerItemText text-secondary">Spring</p>
               <p className="footerItemText text-secondary">Foam</p>
+              <p className="footerItemText text-secondary">Spring</p>
+              <p className="footerItemText text-secondary">Luxury</p>
             </div>
           </div>
           <div className="col-md-2 col-sm-4">
@@ -18,27 +18,27 @@ export default class Footer extends Component {
               <h5 className="text-bold footerHeadText">Health Care</h5>
               <p className="footerItemText text-secondary">Ortho</p>
               <p className="footerItemText text-secondary">Ortho Luxury</p>
-              <p className="footerItemText text-secondary">Medicore</p>
-              <p className="footerItemText text-secondary">Bodicore</p>
-              <p className="footerItemText text-secondary">Medimax</p>
+              {/* <p className="footerItemText text-secondary">Medicore</p> */}
+              <p className="footerItemText text-secondary">Bodicare</p>
+              {/* <p className="footerItemText text-secondary">Medimax</p> */}
               <p className="footerItemText text-secondary">Biopedic</p>
             </div>
           </div>
           <div className="col-md-2 col-sm-4">
             <div className="footerCol">
               <h5 className="text-bold footerHeadText">Accessories</h5>
-              <p className="footerItemText text-secondary">Pillow</p>
+              <p className="footerItemText text-secondary">Travel Pillow</p>
               <p className="footerItemText text-secondary">Prayer Mat</p>
-              <p className="footerItemText text-secondary">Back Care</p>
-              <p className="footerItemText text-secondary">Sheets</p>
-              <p className="footerItemText text-secondary">Pad</p>
+              <p className="footerItemText text-secondary">3 fold bed</p>
+              <p className="footerItemText text-secondary">Memory Pillow</p>
+              <p className="footerItemText text-secondary">Sofa cum Bed</p>
             </div>
           </div>
           <div className="col-md-2 col-sm-4">
-            <div className="footerCol">
+            {/* <div className="footerCol">
               <h5 className="text-bold footerHeadText">Furniture</h5>
               <p className="footerItemText text-secondary">Sofa Cum Bed</p>
-            </div>
+            </div> */}
           </div>
           <div className="col-md-2 col-sm-4">
             <div className="footerCol">

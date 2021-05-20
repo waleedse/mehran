@@ -63,7 +63,7 @@ class ResetPassword extends Component {
                         <div className="card card-signin my-5 animate_auth_modal">
                         <div className="card-body">
                             <div classNameName="site_logo">
-                            
+
                             </div>
                             <h5 className="card-title text-center "><img style={{width:'120px',height:'120px'}}  src={img_baseurl+'site_logo.png'}></img>
                             <br></br>Reset Your Password</h5>
@@ -74,21 +74,21 @@ class ResetPassword extends Component {
                             </div>
                             <div className="form-label-group">
                                 <input onChange={this.ConfirmPassword.bind(this)} type="password" id="inputEmail" className="form-control" placeholder="Email address" required autofocus/>
-                                <label for="inputEmail">Cofirm Password</label>
+                                <label for="inputEmail">Confirm Password</label>
                             </div>
 
-                            
-                            
+
+
                             <button onClick={this.PasswordReset.bind(this)} className="btn btn-lg btn-primary btn-block text-uppercase" type="submit">
-                                {this.state.loading ?  
+                                {this.state.loading ?
                                     <div className="spinner-border text-light ml-2" style={{width:'25px',height:'25px'}} role="status">
                                         <span className="sr-only">Loading...</span>
-                                    </div> 
+                                    </div>
                                     : 'Continue'
                                 }
-                                
+
                                 </button>
-                                
+
                             </form>
                         </div>
                         </div>

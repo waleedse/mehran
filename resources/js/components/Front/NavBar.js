@@ -210,22 +210,38 @@ class NavBar extends Component {
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
     </li>
    {
-       this.state.categories.map((data,index)=>{  
+       this.state.categories.map((data,index)=>{
            return(
+               <>
+            {
+                data.id == 12 ?
+                <li key={index} class="nav-item">
+                <a class="nav-link " href={`/Products/24`}  role="button" aria-haspopup="true" aria-expanded="false">
+                {data.name}
+                </a>
+                </li>
+                :
             <li key={index} class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {data.name}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {
-                    data.subcategories.map((data,index)=>{
-                        return(
-                        <a key={index} href={`/Products/${data.id}`}  class="dropdown-item" >{data.name}</a>
-                        )
-                    })
-                }                        
-            </div>
-        </li>
+
+                    <>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {data.name}
+
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {
+                            data.subcategories.map((data,index)=>{
+                                return(
+                                <a key={index} href={`/Products/${data.id}`}  class="dropdown-item" >{data.name}</a>
+                                )
+                            })
+                        }
+                    </div>
+                    </>
+                    </li>
+                }
+    </>
+
            )
        })
    }
@@ -240,8 +256,8 @@ class NavBar extends Component {
          </a>
     </li>
                           {
-          this.state.islogin ? 
-          
+          this.state.islogin ?
+
             <li class="nav-item  login_box_user dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i className="fas fa-user danger_text"></i>
@@ -253,7 +269,7 @@ class NavBar extends Component {
             <a  onClick={this.logout.bind(this)} class="dropdown-item" >Logout</a>
             </div>
               </li>
-         
+
           :
           <li onClick={this.loginModal.bind(this)} class="nav-item  login_box_user">
           <button  className="btn btn-outline-secondary  loginbtn">Login</button>
@@ -301,14 +317,14 @@ class NavBar extends Component {
                     </div>
                       <div className="text-center loginBtnDiv">
                         <button onClick={this.login.bind(this)} className=" loginBtn ">Login</button>
-                        
+
                       </div>
                       <div className="text-center">
                       <a href="/forgot-password"><p>Fogrot your password?</p></a>
                       </div>
                     </div>
-                    
-                    
+
+
                     <div className="loginDivider"></div>
                     <div className="text-center mb-4">
                       <p className=" text-secondary">
@@ -400,7 +416,7 @@ class NavBar extends Component {
                         onChange={this.s_address.bind(this)}
                       ></input>
                     </div>
-                    
+
                     <div className="text-center loginBtnDiv">
                       <button onClick={this.signup.bind(this)} className=" loginBtn ">Sign Up</button>
                     </div>
