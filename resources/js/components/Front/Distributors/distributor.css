@@ -1,0 +1,190 @@
+.retailText {
+    padding-bottom: 30px;
+    padding-top: 30px;
+    font-size: 2rem;
+    font-family: poopinmediumt !important;
+  }
+  .retailDescription {
+    padding-bottom: 50px;
+    padding-right: 20vw;
+    padding-left: 20vw;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  @media  screen and (max-width:480px){
+    .retailDescription{
+      padding-right: 0 !important;
+    padding-left: 0 !important;
+    }
+    .dreams_content{
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    .coustmProductsImage{
+      display: none;
+    }
+  }
+  .fulfilImage {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .fulfilRow {
+    background-color: #0c519e;
+    padding-right: 10vw;
+    padding-left: 10vw;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .coustmProductsTitle {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10vw;
+    background-color: #f9f8f4;
+  }
+  /* .coustmProductsRow {
+  } */
+  .coustmProductsDescription {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-bottom: 3vw;
+  }
+  .coustmProductsImage {
+    height: 30vw;
+    width: 40vw;
+    position: absolute;
+    z-index: 2;
+    right: 2vw;
+    top: 3vw;
+  }
+  
+  .coustmProductsImageSm {
+    height: 100%;
+    width: 100%;
+  }
+  .blueDivider {
+    padding-bottom: 8px;
+    border-bottom: solid #0d529f;
+  }
+  
+  .distributorCatTitle {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10vw;
+  }
+  .redUselessBox {
+    background-color: #ed1b24;
+  }
+  
+  .distributorCatImgRow {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+  }
+  
+  .distributorCatImg {
+    height: 100%;
+    width: 100%;
+  }
+  .distrbutorCatImgText {
+    font-size: 1.3rem;
+  }
+  
+  .retailerRow {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    background-color: #f4f9fc;
+  }
+  .retailerPointsRow {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  .retailerPointsCol {
+    padding-top: 30px;
+  }
+  .blueCircle {
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    margin: 0 auto;
+    background-color: #0d529f;
+  }
+  .blueCircleText {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 9px;
+    font-size: 30px;
+  }
+  .retailerDescriptionBox {
+    padding-top: 20px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .retailerDescription {
+    color: #656565;
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+  .retailerDescriptionLite {
+    color: #b8bbbd;
+    font-size: 1rem;
+  }
+  .spinner_format{
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .joinUsRow {
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+  }
+  .btnJoinUs {
+    background-color: #ed1b24;
+    border-radius: 28px;
+    border: 1px solid #ed1b24;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 14px;
+    padding: 12px 50px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ed1b24;
+  }
+  
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .coustmProductsDescription {
+      padding-right: 30vw;
+    }
+    .retailText {
+      font-size: 3.5rem;
+      line-height: 1.2;
+    }
+    .distrbutorCatImgText {
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+  }
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+  }
+  

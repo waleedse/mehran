@@ -1,0 +1,47 @@
+.aboutUs-div {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.aboutUs-text {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* inspiration css */
+.inspirationRow {
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.responsibiltyRow {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding-bottom: 40px;
+  padding-top: 70px;
+  padding-left: 90px;
+  padding-right: 30px;
+}
+.responsibiltyImage {
+  width: 100%;
+  height: 100%;
+}
+
+.estoreRow {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.happyShoppingRow {
+  margin-top: 30px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f3f8fb;
+}
+.happyShoppingText {
+  font-size: 2.5rem;
+}
