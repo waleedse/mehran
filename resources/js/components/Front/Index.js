@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './NavBar'
 import Slider from './Slider'
 import './front.css'
-import Features from './LandingComponents/features'
+import Features from './LandingComponents/faeture2'
 import Story from './LandingComponents/Story'
 import FeatureProducts from './LandingComponents/FeatureProducts'
 import Dream from './LandingComponents/Dream'
@@ -18,7 +18,7 @@ class Index extends Component {
               $('nav').addClass('index_nav_var');
             }else{
               $('nav').removeClass('index_nav_var');
-        
+
             }
           })
         })
@@ -33,10 +33,8 @@ class Index extends Component {
       }
     render() {
         return (
-            <div style={{overflowX:"hidden"}}>
-                <div id="index_nav">
-                    <Navbar></Navbar>
-                </div>
+            <div style={{overflow:"hidden"}}>
+
                 <div id="explorebutton">
                  <a href="/Shop"><button  className="btnShopNow">Explore Our Products</button></a>
                 </div>
@@ -45,10 +43,9 @@ class Index extends Component {
                 </div>
                 <Features></Features>
                 <Story />
+                <Journey />
                 <FeatureProducts />
                 <Dream />
-                <Journey />
-                <Footer />
             </div>
         );
     }

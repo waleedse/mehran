@@ -1,41 +1,62 @@
 import React from 'react';
-import AdminSidebar from './Admin/Admin_Sidebar'
+import AdminSidebar from './Admin/Admin_Sidebar';
 import { Switch,BrowserRouter,Route} from 'react-router-dom';
-import Index from './Front/Index'
-import Products from './Front/Products/Products'
-import AboutUs from './Front/Aboutus'
-import Shop from './Front/Products/Shop'
-import Product from './Front/Products/Product'
-import CustomerAccount from './Front/User/CustomerAccount';
-import Cart from './Front/Products/Cart';
-import Checkout from './Front/Products/Checkout';
-import Faq from './Front/Pages/Faq'
-import PrivacyPolicy from './Front/Pages/PrivacyPolicy'
-import Termsandcon from './Front/Pages/TermsandConditions'
-import AdminLogin from './Admin/Login'
-import Orderdetails from './Front/User/Orderdetails'
-import Adminoderdetails from './Admin/Orders/Orderdetails'
+// import Index from './Front/Index';
+// import Products from './Front/Products/Products';
+// import AboutUs from './Front/Aboutus';
+// import Shop from './Front/Products/Shop';
+// import Product from './Front/Products/Product';
+// import CustomerAccount from './Front/User/CustomerAccount';
+// import Cart from './Front/Products/Cart';
+// import Checkout from './Front/Products/Checkout';
+// import Faq from './Front/Pages/Faq';
+// import PrivacyPolicy from './Front/Pages/PrivacyPolicy';
+// import Termsandcon from './Front/Pages/TermsandConditions';
+import AdminLogin from './Admin/Login';
+import Orderdetails from './Front/User/Orderdetails';
+// import Adminoderdetails from './Admin/Orders/Orderdetails';
 import Distributors from './Front/Distributors/landing';
-import Dis_Products from './Front/Distributors/Products/Products'
-import Dis_product from './Front/Distributors/Products/Product'
-import Dis_Cart from './Front/Distributors/Products/Cart'
+import Dis_Products from './Front/Distributors/Products/Products';
+import Dis_product from './Front/Distributors/Products/Product';
+import Dis_Cart from './Front/Distributors/Products/Cart';
 import Dis_login from './Front/Distributors/Auth/Login';
 import Dis_signup from './Front/Distributors/Auth/SignUp';
-import Dis_Account from './Front/Distributors/Account/DisctributorAccount'
-import Dis_checkout from './Front/Distributors/Products/Checkout'
-import Dis_Orderdeatils from './Front/Distributors/Account/OrderDeatils'
-import ForgotPassword from './Front/User/ForgotPassword'
-import ResetPassword from './Front/User/ResetPassword'
-import Dis_ForgotPassword from './Front/Distributors/Auth/ForgotPassword'
-import Dis_ResetPassword from './Front//Distributors/Auth/ResetPassword'
-function App(props) {
+import Dis_Account from './Front/Distributors/Account/DisctributorAccount';
+import Dis_checkout from './Front/Distributors/Products/Checkout';
+import Dis_Orderdeatils from './Front/Distributors/Account/OrderDeatils';
+import ForgotPassword from './Front/User/ForgotPassword';
+import ResetPassword from './Front/User/ResetPassword';
+import Dis_ForgotPassword from './Front/Distributors/Auth/ForgotPassword';
+import Dis_ResetPassword from './Front//Distributors/Auth/ResetPassword';
+import FrontIndex from './Front/Container/Index';
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            routes:['/Products/:id','/Product/:id','/Aboutus',
+            '/Shop','/faqs','/PrivacyPolicy','/TermsAndconditions',
+            '/CustomerAccount','/Cart','/Checkout','/order-details',
+        ]
+        }
+    }
+
+  render(){
   return (
     <BrowserRouter  >
       <div className="main_div">
         <Switch>
           <Route  path="/adminpanel"  component={AdminSidebar}/>
-          <Route  exact path="/"  component={Index}/>
-          <Route   path="/Products/:id"  component={Products}/>
+
+          <Route  exact path="/"  component={FrontIndex}/>
+          {
+              this.state.routes.map((data,index)=>{
+                  return(
+                    <Route key={index} path={data}  component={FrontIndex}/>
+                  )
+              })
+          }
+          {/* <Route   path="/Products/:id"  component={Products}/>
           <Route   path="/Product/:id"  component={Product}/>
           <Route  exact path="/Aboutus"  component={AboutUs}/>
           <Route  exact path="/Shop"  component={Shop}/>
@@ -44,12 +65,12 @@ function App(props) {
           <Route  exact path="/TermsAndconditions"  component={Termsandcon}/>
           <Route  exact path="/CustomerAccount"  component={CustomerAccount}/>
           <Route  exact path="/Cart"  component={Cart}/>
-          <Route  exact path="/Checkout"  component={Checkout}/>
+          <Route  exact path="/Checkout"  component={Checkout}/> */}
           <Route  exact path="/AdminLogin"  component={AdminLogin}/>
           <Route  exact path="/order-details"  component={Orderdetails}/>
           <Route  exact path="/distributor"  component={Distributors}/>
-          <Route   path="/distributor/Products/:id"  component={Dis_Products}/>
-          <Route   path="/distributor/product/:id"  component={Dis_product}/>
+          <Route  path="/distributor/Products/:id"  component={Dis_Products}/>
+          <Route  path="/distributor/product/:id"  component={Dis_product}/>
           <Route  exact path="/distributor/cart"  component={Dis_Cart}/>
           <Route  exact path="/distributor/login"  component={Dis_login}/>
           <Route  exact path="/distributor/signup"  component={Dis_signup}/>
@@ -64,6 +85,7 @@ function App(props) {
       </div>
     </BrowserRouter>
   );
+  }
 }
 
 export default App;

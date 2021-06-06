@@ -1,7 +1,6 @@
 import Axios from 'axios';
 import React, { Component } from 'react';
 import { baseurl, img_baseurl } from '../../Configs/apibase';
-import Navbar from '../NavBar'
 import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
 import { data } from 'jquery';
@@ -48,9 +47,9 @@ class Cart extends Component {
                     })
                 }
 
-               
+
             })
-        
+
 
     }
     delete_from_cart(id){
@@ -65,13 +64,12 @@ class Cart extends Component {
                 showConfirmButton: false,
                 timer: 1500
             })
-            
+
         })
     }
     render() {
         return (
             <div id="cart" className="container">
-                <Navbar></Navbar>
                 <div className="products_page ">
                     <h2 className="page_title">Cart</h2>
                 </div >
@@ -126,7 +124,7 @@ class Cart extends Component {
                                                                         <dt>Qty <span> {data.qty}</span> </dt>
                                                                         <dt>{data.product[0].varient_type}:<span> {data.product[0].varients[0].name}</span> </dt>
                                                                     </dl>
-    
+
                                                                     <div className="m-t-sm">
                                                                         {/* <a href="#" className="text-muted"><i className="fa fa-gift"></i> Add gift package</a>
                                                                         | */}
@@ -136,25 +134,25 @@ class Cart extends Component {
                                                                 <td>
                                                                     <h6>
                                                                     <NumberFormat value={data.price} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} renderText={value => <div>{value}</div>} />
-                                                                    
-                                                                    <span style={{fontSize:'12px'}} className="text-small priceCancelText text-secondary">       
+
+                                                                    <span style={{fontSize:'12px'}} className="text-small priceCancelText text-secondary">
                                                                     {data.discount > 0 ? ' ( '+ data.original_price +' )' : null}
                                                                     </span>
                                                                     </h6>
-                                                                    
+
                                                                 </td>
                                                             </tr>
                                                             </tbody>
                                                         </table>
                                                     </div>
-    
+
                                                 </div>
                                                    )
                                                })
                                            }
-                                            
+
                                             <div className="ibox-content">
-                                               <a href="/Checkout" ><button style={{float:'right'}}  className="btn btn-success pull-right"><i className="fa fa fa-shopping-cart"></i> Checkout</button></a> 
+                                               <a href="/Checkout" ><button style={{float:'right'}}  className="btn btn-success pull-right"><i className="fa fa fa-shopping-cart"></i> Checkout</button></a>
                                                 <a href="/shop"><button className="btn btn-warning"><i className="fa fa-arrow-left"></i> Continue shopping</button></a>
 
                                             </div>
@@ -168,9 +166,9 @@ class Cart extends Component {
                                             </div>
                                             <div className="ibox-content">
                                                 <div>
-                                                    Discount 
+                                                    Discount
                                                     <span className="font-bold" style={{float:'right'}}>
-                                                    
+
                                                     <strong>  <NumberFormat value={this.state.discounts} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} renderText={value => <div>{value}</div>} /> </strong>
                                                     </span>
                                                 </div>
@@ -180,7 +178,7 @@ class Cart extends Component {
                                                 </span>
                                                 <h2 className="font-bold">
                                                 <NumberFormat value={this.state.cart_totals} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} renderText={value => <div>{value}</div>} />
-                                                    
+
                                                 </h2>
 
                                                 <hr/>
@@ -198,7 +196,7 @@ class Cart extends Component {
                                     </div>
                                 </div>
                             </div>
-                            
+
                         }
                             </>
                 }

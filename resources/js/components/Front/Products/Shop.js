@@ -1,7 +1,6 @@
 import Axios from 'axios';
 import React, { Component } from 'react';
 import { baseurl, img_baseurl } from '../../Configs/apibase';
-import Navbar from '../NavBar'
 import NumberFormat from 'react-number-format';
 class Shop extends Component {
     constructor(props) {
@@ -12,7 +11,7 @@ class Shop extends Component {
     }
     componentDidMount(){
         let senderdata = {
-           
+
         }
         Axios.post(baseurl+'/api/get_all_enabled_products').then(res=>{
             this.setState({
@@ -23,10 +22,9 @@ class Shop extends Component {
     render() {
         return (
             <div>
-                <Navbar></Navbar>
                 <div className="products_page container">
                     <h2 className="page_title">Our Products</h2>
-                    <div className="row"> 
+                    <div className="row">
                         {
             this.state.products.map((data,index)=>{
               return(
@@ -54,7 +52,7 @@ class Shop extends Component {
                     }
 
                     </div>
-               
+
                 </div>
             </div>
         );

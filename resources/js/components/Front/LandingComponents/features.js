@@ -3,10 +3,10 @@ import { img_baseurl } from "../../Configs/apibase";
 export default class features extends Component {
   render() {
     return (
-      <div className="conatiner">
+      <div className="conatiner" style={{backgroundColor:'#011A34'}}>
         <div className="text-center title-div">
-          <p className=" title-text">
-            <span className="redDivider">Pre</span>mium Sleep experience you can
+          <p className=" title-text text-light">
+            <span className="redDivider text-light">Pre</span >mium Sleep experience you can
             trust
           </p>
         </div>
@@ -24,7 +24,7 @@ export default class features extends Component {
             </div>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-12">
-            
+
             <div className="outerFeatureBox">
               <div className="  featureBox text-center">
                 <img className="featureIcon" src={img_baseurl+"premium2.png"}></img>

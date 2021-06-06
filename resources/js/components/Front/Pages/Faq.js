@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../NavBar'
-import Footer from '../LandingComponents/Footer'
+
 class Faq extends Component {
     constructor(props) {
         super(props);
@@ -8,17 +7,17 @@ class Faq extends Component {
             faqs:[
                 {
                     question:'How do I place an order?',
-                    answer:`You can place your order as a registered user or a guest. On a product page 
-                    pick foam size, choose quantity and press “Proceed to Checkout” button. You will be 
-                    taken to your shopping cart where you will get the option to continue shopping, or 
-                    carry on to checkout. Add and confirm your personal and shipping information on this 
+                    answer:`You can place your order as a registered user or a guest. On a product page
+                    pick foam size, choose quantity and press “Proceed to Checkout” button. You will be
+                    taken to your shopping cart where you will get the option to continue shopping, or
+                    carry on to checkout. Add and confirm your personal and shipping information on this
                     page, select payment method, and review your order before choosing “Order Now”.`,
                     state:false,
                 },
                  {
                     question:'How long should my sleep set last?',
-                    answer:`You should replace your bedding every eight to ten years. 
-                    After this time, the bedding will no longer provide the support and comfort that is required. 
+                    answer:`You should replace your bedding every eight to ten years.
+                    After this time, the bedding will no longer provide the support and comfort that is required.
                     You can get more information and sleeping tips on www.sleepresearchfoundation.org`,
                     state:false,
                 },
@@ -64,7 +63,6 @@ class Faq extends Component {
     render() {
         return (
             <div>
-                <Navbar/>
                 <div className="container">
                     <h1 className="title-text text-center">FAQ's</h1>
                     {
@@ -85,13 +83,12 @@ class Faq extends Component {
                             )
                         })
                     }
-                    
+
                 </div>
                 <div className="mt-5">
-                        <Footer/>
                     </div>
             </div>
-            
+
         );
     }
 }

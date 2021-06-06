@@ -39,12 +39,23 @@
   .inspirationRow{
     margin-top: 80px !important;
   }
-    #index_nav .navbar{
+    /* #index_nav .navbar{
         background-color: rgba(255, 255, 255, 0);
         position: absolute;
         top:0;
         z-index: 11;
         width: 100%;
+    } */
+    .nav_home{
+        background-color: rgba(255, 255, 255, 0);
+        position: absolute;
+        top:0;
+        z-index: 11;
+        width: 100%;
+        background: transparent !important;
+    }
+    .headerImage{
+        width: 110px;
     }
     #index_nav .nav-link{
         color:black !important;
@@ -290,6 +301,9 @@
     .mob_center{
       text-align: center !important;
     }
+    .landingSliderBg{
+        /* height: 585px !important; */
+    }
     .responsibiltyRow {
       margin-top: 0 !important;
       margin-bottom: 0 !important;
@@ -316,11 +330,11 @@
 }
 
 .navbar-nav {
-    height: 100px;
+    height: 50px;
 
 }
 .navbar{
-    padding:20px !important;
+    padding:5px 20px 5px 20px !important;
 }
 .thumbs-wrapper{
     display: none !important;
@@ -383,13 +397,13 @@ demo-div {
   .featureItemText {
     font-size: 1rem;
     font-weight: bolder;
-    color: black;
+    color: #fff;
     font-family: Poppins-Regular;
   }
   .featureValueText {
     font-size: 14px;
     font-weight: bolder;
-    color: black;
+    color: #fff;
     font-family: Poppins-Regular;
   }
   .subtext:hover{
@@ -403,10 +417,10 @@ demo-div {
 
   /*Story css*/
   .storyRow {
-    margin-top: 50px;
-    margin-bottom: 20px;
+    /* margin-top: 50px; */
+    /* margin-bottom: 20px; */
     margin-left: 20px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
   }
   .storyImage {
     width: 100%;
@@ -475,12 +489,27 @@ demo-div {
     margin-top: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: #f7f7f7;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #021a34;
 
   }
   /*Journey css*/
+
+  .journey_bg{
+    background-image: url("/images/bluemattresslayer.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 520px;
+    width: 100%;
+    position: relative;
+    background-color: transparent;
+    z-index: 100;
+    margin-top: -60px;
+  }
+
+
   .journeyBox {
     margin-top: 60px;
     margin-bottom: 60px;
@@ -511,6 +540,10 @@ demo-div {
     text-shadow: 0px 1px 0px #0c519e;
     margin-top: 10px;
   }
+  .footer{
+      background-color: #021a34;
+      margin-bottom: -20px;
+  }
   .shippingRow {
     margin-top: 20px;
     background-color: #f9f8f4;
@@ -521,19 +554,25 @@ demo-div {
   .footerTopDivider {
     height: 40px;
     width: 100vw;
-    background-color: #0c519e;
-    margin-bottom: 30px;
+    background-color: #da232f;
+    padding-bottom: 30px;
   }
   .footerHeadText {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: 700;
+    color: #fff;
   }
   .footerItemText {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    color: #fff !important;
+    text-align: left;
   }
   .footerRow {
     margin-left: 0%;
     margin-right: 0%;
+    padding-top:30px;
+    text-align: left;
+
   }
   @media (min-width: 992px){
     .navbar-expand-lg .navbar-nav .dropdown-menu {
@@ -545,6 +584,8 @@ demo-div {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5%;
+    text-align: left;
+
   }
   .phoneText {
     color: black !important;
@@ -615,8 +656,8 @@ demo-div {
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px) {
     .footerRow {
-      margin-left: 15%;
-      margin-right: 15%;
+      /* margin-left: 15%; */
+      /* margin-right: 15%; */
     }
   }
 
@@ -1368,3 +1409,474 @@ a.list-group-item, .list-group-item-action {
 .happyShoppingText {
   font-size: 2.5rem;
 }
+
+/* Deposite Table CSs */
+
+.depositeTableWrapper {
+    overflow: scroll;
+    margin-top: 10px;
+  }
+  .depositeLogoImage {
+    width: 80px;
+    height: auto;
+  }
+  .depositeTable thead th {
+    font-size: 0.8rem;
+    font-weight: 500;
+    vertical-align: middle;
+    padding-left: 20px;
+    background-color: #d0d0d0;
+  }
+  .depositeTable tbody tr {
+    font-size: 0.8rem;
+    vertical-align: middle;
+    color: #000;
+  }
+  .depositeOutlineButton {
+    background-color: #fff;
+    border: 1px solid #eb1597;
+    display: inline-block;
+    cursor: pointer;
+    color: #000;
+    font-family: Helvetica;
+    font-size: 0.7rem !important;
+    font-weight: bold;
+    padding: 5px 20px;
+    text-decoration: none;
+  }
+  .depositeOutlineButton:hover {
+    background-color: #eb1597;
+    color: #fff;
+
+  }
+  .depositToggle .outerDiv{
+    background-color: #fff;
+    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  .depositToggle .innerDivActive{
+
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 8px 35px;
+    background-image: linear-gradient(to right ,#ef3c99,#500d55);
+    color: white;
+    border-radius: 30px;
+    transition: ease-in 0.1s;
+
+  }
+  .depositToggle .innerDiv{
+    background-image: none;
+    color: #000;
+  }
+  .depositTrading{
+
+    background-color: #F4F3F3;
+  }
+  .depositTrading .title{
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #000;
+  }
+  .depositDivider{
+   width:200px;
+   background-color: #DCDCDC;
+
+  }
+  .depositeDividerOverlay{
+    position: relative;
+
+  height: 5px;
+  width: 60px;
+  background-color: #eb1597;
+  margin: 0 auto;
+  margin-top: -20px;
+  }
+  .depositTrading Img{
+    width: 300px;
+    height: 100%;
+  }
+  .depositTrading .text{
+    color: #797979;
+    font-size: 0.8rem;
+    padding: 20px 30px;
+  }
+  .depositButton{
+    background-image:linear-gradient(to right ,#ef3c99,#500d55) ;
+    color: #fff; font-size: 1rem;
+    font-weight: bold;
+    padding: 7px 20px;
+    border-radius: 20px;
+    border: none;
+  }
+  .depositStepsTitle{
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .depositCard .outerDiv{
+    width: 210px;
+    min-height: 350px;
+    background-color: #F4F3F3;
+    padding: 30px 20px 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  .depositCard .outerDiv:hover{
+    background-color: #fff;
+    box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.25);
+  }
+  .depositCard .Img{
+    width: 80px;
+  }
+  .depositCard .title{
+    color: #f32b38;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+    text-transform: uppercase;
+
+  }
+  .depositCard .text{
+    color: #000;
+    font-size: 16px;
+  }
+  .depositCardRow{
+    padding: 1vw 15vw 3vw;
+  }
+
+
+  .headerLogo {
+    width: 70px;
+    height: 70px;
+    margin-left: 5vw;
+    /* margin-top: -130px; */
+  }
+  .headerLogoAllPages {
+    width: 50px;
+    height: 50px;
+    margin-left: 5vw;
+    /* margin-top: -130px; */
+  }
+  .navbar {
+    width: 100% !important;
+    background-color: #021a34e8;
+  }
+  .navItemRow {
+    padding-left: 0.8rem;
+  }
+
+  .navBarItem {
+    font-size: 13px !important;
+    font-weight: bold;
+    color: #fff !important;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    padding-top: 10px;
+    border-left: 1px solid #f7f7f749;
+    /* padding-bottom: 15px; */
+    transition: ease-in 0.2s;
+    height: 40px;
+  }
+  .navBarItem:hover {
+    /* background-color: #f67280; */
+    background-color: #181422d8;
+    color: #fff !important;
+    cursor: pointer;
+  }
+  .headerDropDown {
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1000;
+    margin-top: -15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: ease-in 0.2s;
+    background-color: #021a34ea;
+    cursor: default;
+  }
+  .navbar {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .navbar-light .navbar-toggler {
+    border: none;
+  }
+  .dropdown-toggle:after {
+    display: none;
+  }
+  .headerDropDownItemDiv {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
+    justify-content: center;
+
+    margin-top: 20px;
+  }
+  .headerDropDownItem {
+    padding: 5px 10px;
+    color: white;
+  }
+  .headerDropDownTitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    padding-left: 10px;
+    text-transform: uppercase;
+  }
+  .header_mob {
+    font-size: 22px;
+    /* font-weight: 500; */
+    color: #fff;
+    padding-left: 10px;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+  .headerDropDownImg {
+    width: 200px;
+    height: auto;
+  }
+
+  /* sidebar csss */
+  .headerMobile {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 22222222222;
+    right: 0;
+    min-width: 320px;
+    height: 100vh;
+    transform: translateX(-103vw);
+    transition-delay: 0.6s;
+    -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background-color: #291023;
+  }
+  .headerMobileActive {
+    transform: translateX(0);
+  }
+  .sideBarHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    padding-top: 40px;
+  }
+  .sideBarBody {
+    position: absolute;
+    display: inline-block;
+    overflow-y: auto;
+    width: 100vw;
+    vertical-align: top;
+    -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .activeDropDown {
+    -webkit-transform: translateX(-100vw);
+    transform: translateX(-100vw);
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+  }
+  .sideBarItem {
+    color: #fff;
+    display: flex;
+    text-transform: capitalize;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+  }
+  .sideBarItemNew {
+    color: #fff;
+    display: block !important;
+    text-transform: capitalize;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px !important;
+  }
+  .sideBarItem:hover,
+  .sideBarItem:focus {
+    /* background-color: #262b2e; */
+  }
+
+  /* LandingSliderSection Css */
+  .product_tile_bg{
+    background-image: url("/assets/images/landingBg1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 760px;
+    width: 100%;
+  }
+.product_tile_title{
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    padding-top:60px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.products_head{
+    color: #4e4e4e;
+    font-weight: 300;
+}
+.btn_shopnow{
+    border-radius: 1px;
+    background-color: #0cc6de;
+    padding: 15px 30px 15px 30px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 10px;
+    border: 1px solid #fff;
+}
+.pricing_div{
+    position: absolute;
+    top: 380px;
+    text-align: center;
+    width: 100%;
+}
+.short_des{
+    font-size: 14px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.product_tile_price{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    /* padding-top:170px; */
+}
+.landingSliderBg {
+    background-image: url("/assets/images/landingBg1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 760px;
+    width: 100%;
+  }
+  .product_tile_card{
+      height: 500px;
+      width: 350px;
+  }
+  .trueRow {
+    color: white;
+    padding-top: 10vw;
+    text-align: center;
+    text-shadow: black;
+    padding-top:120px;
+  }
+  .carousel-root{
+      /* height: 585px ; */
+  }
+  .trueTitle {
+    font-weight: bolder;
+    font-size: 2.8rem;
+  }
+  .trueDescription {
+    padding-top: 10px;
+    font-size: 1.1rem;
+  }
+  .trueButtonBox {
+    padding-top: 30px;
+  }
+
+
+  /* FOOTER CSS */
+
+  .footerRow {
+    background-color: #021a34;
+    color: #fff;
+    padding-top: 5vw;
+    padding-left: 15vw;
+    padding-right: 10vw;
+    /* padding-bottom: 3vw; */
+  }
+  .footerTitle {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  .footerText {
+    font-size: 0.8rem;
+  }
+  .footerLogo {
+    margin-bottom: 10px;
+    width: 110px;
+  }
+  .footerSocialBox {
+    display: flex;
+    /* margin: 10px auto; */
+    width: fit-content;
+  }
+  .footerSocialCircle {
+    height: 40px;
+    width: 40px;
+    background-color: #000;
+    border-radius: 20px;
+    border: 2px solid #252525;
+    margin-right: 10px;
+  }
+  .footerSocialImage {
+    padding: 12px;
+    cursor: pointer;
+  }
+  .footerSocialCircle:hover {
+    background-color: #343434;
+    border: 2px solid #1515eb;
+  }
+  .footerLinkTitle {
+    font-size: 1.3rem !important;
+    color: #f7f7f7;
+  }
+  .footerLinkText {
+    font-size: 0.9rem;
+    line-height: 1;
+    cursor: pointer;
+    color: white;
+  }
+  .footerLinkText:hover {
+    color: rgb(209, 35, 35);
+  }
+  .textBold {
+    font-weight: bold;
+  }
+  .footerCol {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  .footerSecondRow {
+    background-color: #202020;
+    color: #fff;
+    padding-top: 20px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-bottom: 20;
+  }
+  .footerRightsRow {
+    background-color: #fff;
+    text-align: left;
+  }
+  .footerRightsText {
+    font-size: 0.7rem;
+    padding: 15px;
+    margin: 0 auto;
+    font-weight: bold;
+  }

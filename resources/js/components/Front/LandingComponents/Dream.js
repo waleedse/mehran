@@ -1,18 +1,40 @@
 import React, { Component } from "react";
 
 export default class Dream extends Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            scroll:0
+        }
+    }
+
+    componentDidMount(){
+        window.addEventListener("scroll", (event) => {
+            let scroll = window.scrollY;
+            this.setState({
+                scroll:scroll
+            })
+            console.log(scroll)
+        });
+    }
   render() {
     return (
       <div>
-        <div className="row dreamRow">
+        <div className="row dreamRow" >
+
           <div className="col-md-7 ">
+            {
+               this.state.scroll > 2450 ?
+
             <img className="dreamImage" src={"/images/imageDream.gif"}></img>
+                :null
+            }
           </div>
           <div className="col-md-5 ">
-            <h1 className="title-text mt-5">
-              <span className="redDivider">A Dur</span>able Dream come true
+            <h1 className="title-text mt-5 text-light">
+              <span className="redDivider text-light">A Dur</span>able Dream come true
             </h1>
-            <p className="text-secondary justify-content mt-4">
+            <p className="text-secondary text-light justify-content mt-4">
               You have come to the right place for online mattress shopping. We are one of the best mattress brands in
               Pakistan.
               Customers who were looking for improvement of back pain, orthopedic memory foam mattresses,

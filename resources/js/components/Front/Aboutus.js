@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import Navbar from './NavBar'
-import Footer from './LandingComponents/Footer'
+
 
 class Aboutus extends Component {
     render() {
         return (
             <div>
-                <Navbar></Navbar>
                 <div className="aboutus_page">
                     {/* <div className="container">
                     <h2 className="page_title text-center">About Us</h2>
@@ -117,10 +115,9 @@ class Aboutus extends Component {
           </div>
         </div>
       </div>
-                           
+
                     </div>
                 </div>
-                <Footer className="mt-5"/>
             </div>
         );
     }
