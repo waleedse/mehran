@@ -1,4 +1,4 @@
 module.exports = {
     baseurl:'',
-    img_baseurl:'/public/images/'
+    img_baseurl:'/images/'
 }

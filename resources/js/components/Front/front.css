@@ -466,7 +466,7 @@ demo-div {
     background-color: #da232f;
     position: absolute;
     text-align: center;
-    left: 200px;
+    left: 80%;
     top: 5px;
   }
   .m-b-0 {
@@ -735,7 +735,7 @@ demo-div {
         background-color: #F3F8FB;
         width: 700px;
         position: absolute;
-        top: 96%;
+        top: 85%;
         left: 7%;
       }
     .animate_auth_modal{

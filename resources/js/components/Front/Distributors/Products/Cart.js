@@ -1,7 +1,6 @@
 import Axios from 'axios';
 import React, { Component } from 'react';
 import { baseurl, img_baseurl } from '../../../Configs/apibase';
-import Navbar from '../Dis_Navbar'
 import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
 
@@ -29,7 +28,7 @@ class Cart extends Component {
                             cart_totals: res.data.cart[0].cart_totals,
                             discounts: res.data.cart[0].discounts,
                             cart:res.data.cart,
-                           
+
                         },function(){
                             this.setState({
                                 loading:false
@@ -47,9 +46,9 @@ class Cart extends Component {
                     })
                 }
 
-               
+
             })
-        
+
 
     }
     delete_from_cart(id){
@@ -64,13 +63,12 @@ class Cart extends Component {
                 showConfirmButton: false,
                 timer: 1500
             })
-            
+
         })
     }
     render() {
         return (
             <div className="container">
-                <Navbar></Navbar>
                 <div className="products_page ">
                     <h2 className="page_title">Cart</h2>
                 </div >
@@ -125,7 +123,7 @@ class Cart extends Component {
                                                                         <dt>Qty <span> {data.qty}</span> </dt>
                                                                         <dt>{data.product[0].varient_type} <span> {data.product[0].varients[0].name}</span> </dt>
                                                                     </dl>
-    
+
                                                                     <div className="m-t-sm">
                                                                         {/* <a href="#" className="text-muted"><i className="fa fa-gift"></i> Add gift package</a>
                                                                         | */}
@@ -134,26 +132,26 @@ class Cart extends Component {
                                                                 </td>
                                                                 <td>
                                                                     <h4>
-                                                                   
+
                                                                     Rs,{data.price}
-                                                                    <span style={{fontSize:'12px'}} className="text-small priceCancelText text-secondary">       
+                                                                    <span style={{fontSize:'12px'}} className="text-small priceCancelText text-secondary">
                                                                     {data.discount > 0 ? ' ( '+ data.original_price +' )' : null}
                                                                     </span>
                                                                     </h4>
-                                                                    
+
                                                                 </td>
                                                             </tr>
                                                             </tbody>
                                                         </table>
                                                     </div>
-    
+
                                                 </div>
                                                    )
                                                })
                                            }
-                                            
+
                                             <div className="ibox-content">
-                                               <a href="/distributor/checkout" ><button style={{float:'right'}}  className="btn btn-success pull-right"><i className="fa fa fa-shopping-cart"></i> Checkout</button></a> 
+                                               <a href="/distributor/checkout" ><button style={{float:'right'}}  className="btn btn-success pull-right"><i className="fa fa fa-shopping-cart"></i> Checkout</button></a>
                                                 {/* <a href="/shop"><button className="btn btn-warning"><i className="fa fa-arrow-left"></i> Continue shopping</button></a> */}
 
                                             </div>
@@ -167,7 +165,7 @@ class Cart extends Component {
                                             </div>
                                             <div className="ibox-content">
                                                 <div>
-                                                    Discount 
+                                                    Discount
                                                     <span className="font-bold" style={{float:'right'}}>
                                                     <strong>  Rs, {this.state.discounts} </strong>
                                                     </span>
@@ -195,7 +193,7 @@ class Cart extends Component {
                                     </div>
                                 </div>
                             </div>
-                            
+
                         }
                             </>
                 }

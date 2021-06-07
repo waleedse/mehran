@@ -1,19 +1,16 @@
 import React, { Component } from "react";
 import { img_baseurl } from "../../Configs/apibase";
 import "./distributor.css";
-import Navbar from './Dis_Navbar';
-import Footer from '../LandingComponents/Footer';
 
 export default class Distributor extends Component{
   componentdidmount(){
     document.title = "Distributors"
   }
-  
+
   render() {
     return (
       <div>
           <div>
-              <Navbar {...this.props}></Navbar>
           </div>
         <h1 className="retailText  text-center">BECOME A RETAIL PARTNER</h1>
         <p className=" text-center  retailDescription">
@@ -255,7 +252,6 @@ export default class Distributor extends Component{
           </div>
         </div>
         <div>
-            <Footer></Footer>
         </div>
       </div>
     );

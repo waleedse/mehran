@@ -151,7 +151,7 @@ class Products extends Component {
     render() {
         return (
             <div id="#product_page">
-                <div className="products_page container mb-5">
+                <div className="products_page container mb-5 mt-5">
                 <h1 className="product-name-title-text text-center mb-5">{this.state.product.name}</h1>
                     <h2 className="page_title">Product Details</h2>
                     {

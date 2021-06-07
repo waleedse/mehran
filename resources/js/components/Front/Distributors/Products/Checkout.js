@@ -1,10 +1,8 @@
 import Axios from 'axios';
 import * as React from 'react';
 import { baseurl} from '../../../Configs/apibase';
-import Navbar from '../Dis_Navbar'
 import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
-import Footer from '../../LandingComponents/Footer'
 class Checkout extends React.Component  {
     constructor(props) {
         super(props);
@@ -35,7 +33,7 @@ class Checkout extends React.Component  {
             sub_cart_totals:0,
             Available_loyalty_points:this.props.user.loyaltypoints
         };
-        
+
     }
     componentDidMount(){
         Axios.post('/api/get_cities').then(res=>{
@@ -46,14 +44,14 @@ class Checkout extends React.Component  {
         let senderdata = {
             cart_cookie_id : window.localStorage.getItem('dis_cart_cookie_id')
         }
-       
+
         Axios.post(baseurl + '/api/get_dis_cookie_session_cart', senderdata).then(res => {
             if(res.data.cart){
                 if(res.data.cart.length > 0){
                     this.setState({
-                        cart_totals: res.data.cart[0].cart_totals,    
+                        cart_totals: res.data.cart[0].cart_totals,
                         totals: res.data.cart[0].cart_totals,
-                        master_totals:res.data.cart[0].cart_totals,      
+                        master_totals:res.data.cart[0].cart_totals,
                         discount: res.data.cart[0].discounts,
                         sub_cart_totals:res.data.cart[0].sub_cart_totals
                     },function(){
@@ -73,7 +71,7 @@ class Checkout extends React.Component  {
                 })
             }
 
-           
+
         })
     }
     onSubmit = (e) => {
@@ -82,7 +80,7 @@ class Checkout extends React.Component  {
             this.setState({
                 cus_id:this.props.user.dis
             },function(){
-                
+
             let validity = this.checkValidity();
             if (validity != true) {
                 return;
@@ -116,8 +114,8 @@ class Checkout extends React.Component  {
                 timer: 1500
             })
         }
-        
-        
+
+
     };
     // validity
     checkValidity = () => {
@@ -280,8 +278,7 @@ class Checkout extends React.Component  {
     render() {
         return (
             <div  >
-                <Navbar ref={this.childRef} {...this.props}></Navbar>
-                
+
                 <div className="container">
                 <div classNameName="products_page ">
                     <h2 className="page_title">Check Out</h2>
@@ -471,7 +468,7 @@ class Checkout extends React.Component  {
                                                 : "form-control"
                                         }
                                         id="country"
-                                        placeholder="eg. Pakistan" 
+                                        placeholder="eg. Pakistan"
                                         onChange={this.getCountry}
                                     />
                                     <div className="text-danger ">
@@ -511,7 +508,7 @@ class Checkout extends React.Component  {
                         <div className="col-md-3 mb-5"></div>
                     </div>
                     <div className="col-md-4 mt-3 row">
-                    
+
                     <div className="col-md-12 mt-1">
                                         <div className="ibox">
                                             <div className="ibox-title">
@@ -525,26 +522,26 @@ class Checkout extends React.Component  {
                                                     </span>
                                                 </div>
                                                 <div>
-                                                    Discount 
+                                                    Discount
                                                     <span className="font-bold" style={{float:'right'}}>
                                                     <strong>  Rs, {this.state.discount} </strong>
                                                     </span>
                                                 </div>
                                                 <div>
-                                                    Shipping 
+                                                    Shipping
                                                     <span className="font-bold" style={{float:'right'}}>
                                                     <strong>  Rs, {this.state.Shipping} </strong>
                                                     </span>
                                                 </div>
                                                 <div>
-                                                    Loyalty Discount 
+                                                    Loyalty Discount
                                                     <span className="font-bold" style={{float:'right'}}>
                                                     <strong>  Rs, {this.state.loyaltydiscount} </strong>
                                                     </span>
                                                 </div>
                                                 <hr/>
                                                 <div>
-                                                     
+
                                                     <span  >
                                                     Total
                                                     <strong>   </strong>
@@ -553,7 +550,7 @@ class Checkout extends React.Component  {
                                                     Rs, {this.state.totals}
                                                     </h2>
                                                 </div>
-                                               
+
 
                                                 <hr/>
                                                 {/* <span className="text-muted small">
@@ -574,7 +571,7 @@ class Checkout extends React.Component  {
                                                 <h5>Loyalty Points</h5>
                                             </div>
                                             <div className="ibox-content">
-                                                
+
                                             <div class="form-group input_div col-md-12">
                                                     <label className="input_label" for="exampleInputEmail1">Available Loyalty Points</label>
                                                     <input disabled value={this.props.user.loyaltypoints}  type="email" class="form-control " aria-describedby="emailHelp"  />
@@ -592,12 +589,11 @@ class Checkout extends React.Component  {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> 
+                                        </div>
                                     </div>
                     </div>
                 </div>
                 </div>
-            <Footer/>
             </div>
         );
     }

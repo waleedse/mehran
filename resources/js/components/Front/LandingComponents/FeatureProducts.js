@@ -75,14 +75,14 @@ export default class Projects extends Component {
                                     </div>:
                                 null
                              }
-                             
-                            
+
+
                             {
                                 data.images.length > 0 ?
                                 <img className="popImage" src={img_baseurl+data.images[0].image}></img>
                                 :<img className="popImage" src={"/images/noimage.png"}></img>
                             }
-                            <h1 className=" text-bold featureItemText pt-2">{data.name}</h1>
+                            <h1 className=" text-bold featureItemText pt-2 text-dark">{data.name}</h1>
                             <div className="row priceRow">
                                 <div className="col-6">
                                 <div className="priceCancelText text-secondary">{data.cheep_varient.discount > 0 ? data.cheep_varient.original_price : null}</div>
@@ -100,7 +100,7 @@ export default class Projects extends Component {
           }
         </Carousel>
         <div className="row popProductRow">
-          
+
         </div>
       </div>
     );

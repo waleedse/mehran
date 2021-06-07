@@ -1,8 +1,6 @@
 import Axios from 'axios';
 import React, { Component } from 'react';
 import { baseurl, img_baseurl } from '../../../Configs/apibase';
-import Navbar from '../Dis_Navbar'
-import Footer from '../../LandingComponents/Footer'
 import {connect} from 'react-redux'
 import Swal from 'sweetalert2'
 import Carousel from 'react-multi-carousel';
@@ -71,12 +69,12 @@ class Products extends Component {
                     p_discount:res.data[0].cheep_varient.discount,
                     discount_id:res.data[0].cheep_varient.discount_id,
                     original_price:res.data[0].cheep_varient.original_price,
-                    
+
                 },function(){
                     console.log(this.state);
                 })
                 }
-                
+
             })
                 Axios.post(baseurl+'/api/get_product_values',senderdata).then(res=>{
                     console.log(res);
@@ -85,7 +83,7 @@ class Products extends Component {
                 })
             })
         },10)
-       
+
     }
     onchange_varient(e){
         let varients = this.state.product.varients;
@@ -113,7 +111,7 @@ class Products extends Component {
                 price:e.target.value * this.state.product.cheep_varient.price
             })
         }
-       
+
     }
     increase_qty(){
             let qty = this.state.qty + 1;
@@ -130,7 +128,7 @@ class Products extends Component {
                 price:qty * this.state.product.cheep_varient.price
             })
         }
-        
+
     }
     add_product_in_cart(){
         let cart_cookie_id = window.localStorage.getItem('dis_cart_cookie_id');
@@ -154,7 +152,7 @@ class Products extends Component {
 
         Axios.post(baseurl+'/api/add_dis_product_in_cart',senderdata).then(res=>{
             console.log(res);
-            
+
                 Swal.fire({
                     icon: 'success',
                     title: 'Product Added to cart Successfully.',
@@ -162,14 +160,13 @@ class Products extends Component {
                     timer: 1500
                 })
                 this.props.history.push('/distributor/cart');
-            
+
         })
     }
     render() {
         return (
-            <div id="#product_page">
-                <Navbar></Navbar>
-                <div className="products_page container mb-5">
+            <div id="#product_page mt-5">
+                <div className="products_page mt-5 container mb-5">
                 <h1 className="product-name-title-text text-center mb-5">{this.state.product.name}</h1>
                     <h2 className="page_title">Product Details</h2>
                     {
@@ -187,10 +184,10 @@ class Products extends Component {
                     <div className="container-fluid p-3">
                         <div className="wrapper row">
                             <div className="preview col-md-6">
-                                
+
                                 <div className="preview-pic tab-content">
                                 <div className="tab-pane active" id="pic-1"><img src={this.state.active_image == '' ? img_baseurl+this.state.product.images[0].image : img_baseurl+this.state.active_image} /></div>
-                            
+
                                 </div>
                                 <ul className="preview-thumbnail nav nav-tabs">
                                     {
@@ -202,7 +199,7 @@ class Products extends Component {
                                         })
                                     }
                                 </ul>
-                                
+
                             </div>
                             <div className="details card  col-md-6" style={{paddingLeft:'30px'}}>
                             {/* <h3 className="product-title">{this.state.product.name}</h3> */}
@@ -214,10 +211,10 @@ class Products extends Component {
                                         <span className="fa fa-star"></span>
                                         <span className="fa fa-star"></span>
                                     </div>
-                                    <span className="review-no">41 reviews</span> 
+                                    <span className="review-no">41 reviews</span>
                                 </div> */}
                                 <p className="product-description mt-5">{this.state.product.description}</p>
-                                <h4 className="price mt-4">Rs. <span>{this.state.price}</span><span style={{fontSize:'12px'}} className="text-small priceCancelText text-secondary">       
+                                <h4 className="price mt-4">Rs. <span>{this.state.price}</span><span style={{fontSize:'12px'}} className="text-small priceCancelText text-secondary">
                                     {this.state.p_discount > 0 ? ' ( '+ this.state.original_price +' )' : null}
                                     </span></h4>
                                 {/* <p className="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p> */}
@@ -299,16 +296,15 @@ class Products extends Component {
             })
           }
         </Carousel>
-                
+
                 </div>
                 :null
                 }
                         </>
                     }
-                    
-                
+
+
                 </div>
-                <Footer/>
             </div>
         );
     }
