@@ -55,7 +55,10 @@
         background: transparent !important;
     }
     .headerImage{
-        width: 110px;
+        width: 180px;
+    }
+    .des_menu_text{
+      font-size: 12px;
     }
     #index_nav .nav-link{
         color:black !important;
@@ -1590,13 +1593,13 @@ a.list-group-item, .list-group-item-action {
   }
   .navBarItem:hover {
     /* background-color: #f67280; */
-    background-color: #181422d8;
+    background-color: #021a34f8;
     color: #fff !important;
     cursor: pointer;
   }
   .headerDropDown {
     width: 100%;
-    height: 250px;
+    height: 300px;
     position: absolute;
     left: 0;
     top: 100%;

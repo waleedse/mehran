@@ -24,7 +24,7 @@ class Slider extends Component {
             autoPlay = {true}
             showArrows={true}
             infiniteLoop={true}
-            interval={100000}
+            interval={3000}
             // stopOnHover={true}
             // showThumbs={true}
             // showStatus={true}
@@ -49,9 +49,7 @@ class Slider extends Component {
                             </div>
                             </div> */}
                         </div>
-                        <div className="landingSliderBg" style={{backgroundImage:`url(/images/slidera.jpg`}}>
-
-                        </div>
+                       
 
                         <div className="landingSliderBg" style={{backgroundImage:`url(/images/sliderb.jpg`}}>
                         <div className="container">
@@ -61,6 +59,17 @@ class Slider extends Component {
                                <h6 style={{fontSize:'22px'}}> The perfect mattress didn’t exist,so we <br/>  invented it.
                                 Experience extreme  comfort <br/> with
                               our Royal Comfort Spring Mattress</h6>
+                            </div>
+                            </div>
+                        </div>
+                        <div className="landingSliderBg" style={{backgroundImage:`url(/images/slider4.jpg`}}>
+                        <div className="container">
+
+                            <div className=" trueRow text-left">
+                            <h2 style={{fontSize:'48px',fontWeight:'700'}}>Chairman Orthopaedic</h2>
+                               <h6 style={{fontSize:'22px'}}>
+                               An exquisite orthopaedic mattress <br/>range designed for an optimum <br/>alignment of your body
+                              </h6>
                             </div>
                             </div>
                         </div>

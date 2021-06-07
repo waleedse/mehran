@@ -4,8 +4,13 @@ import { a } from "react-router-dom";
 export default class Footer extends Component {
   render() {
     return (
-      <div className="container-fluid px-0">
-        <div className="row footerRow">
+      <div className="container-fluid px-0 ">
+      
+        <div className=" footerRow">
+          <div className="conatiner pb-5">
+          <hr className="bg-light"></hr>
+        </div>
+        <div className="row">
           <div className="col-md-4 col-sm-12 ">
             <div className="footerCol">
               <img
@@ -80,12 +85,14 @@ export default class Footer extends Component {
             </a>
             {/* <p className="footerLinkText"> Contact Us</p> */}
           </div>
+          </div>
         </div>
         <div className="row footerRightsRow">
           <h5 className="footerRightsText">
             Copyright 2021 {"\u00A9"} Chairman Foam All Right Reserved
           </h5>
         </div>
+       
       </div>
     );
   }
