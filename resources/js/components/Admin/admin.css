@@ -16,6 +16,9 @@ body{
 .makeStyles-ListItemstyles-3{
     margin: 0 !important;
 }
+.dropdown-menu.show{
+  left: -90px !important;
+}
 .heading_text_normal{
   font-family:poopinmediumt ;
   font-size: 30px;

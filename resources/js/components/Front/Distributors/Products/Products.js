@@ -52,7 +52,7 @@ class Products extends Component {
             <div>
                 <img className="sub_cat_img" src={img_baseurl+this.state.sub_cat_image}></img>
                 <div className="products_page mb-5">
-                <h1  className="title-text products_head text-center mb-4 mt-3 py-4">Most Comfortable Choice for your Bedroom</h1>
+                <h1  className="title-text products_head text-center mb-4 mt-3 py-4">Sink into the sheer premium comfort of our exceptional range of mattresses</h1>
 
                     {/* <h1 className="title-text text-center mb-4">{this.state.CategoryName}</h1> */}
                     {/* <h2 className="page_title text-center">Products</h2> */}
@@ -91,7 +91,7 @@ class Products extends Component {
                                 null
                             }
                             <h2 className="product_tile_title">{data.name}</h2>
-                            <p className="text-light short_des">Comfortable and supportive. Our signature foam mattress.</p>
+                            <p className="text-light short_des">{data.p_short_description}</p>
                             <div className="pricing_div">
                             <h2 className="product_tile_price"> <span>
                                 <NumberFormat value={data.cheep_varient.price} displayType={'text'} thousandSeparator={true} prefix={'FROM Rs. '} renderText={value => <div>{value}</div>} />

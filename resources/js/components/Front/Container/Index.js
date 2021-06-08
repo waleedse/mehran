@@ -15,6 +15,10 @@ import Termsandcon from '../Pages/TermsandConditions';
 import { Route } from 'react-router';
 import HomeIndex from '../Index';
 
+import ContactUs from '../Pages/OurLocationPage/OurLocationPage';
+import Login from '../Pages/Auth/Login';
+import SignUp from '../Pages/Auth/SignUp';
+
 class Index extends Component {
     constructor(props) {
         super(props);
@@ -48,6 +52,9 @@ class Index extends Component {
                 <Route  exact path="/CustomerAccount"  component={CustomerAccount}/>
                 <Route  exact path="/Cart"  component={Cart}/>
                 <Route  exact path="/Checkout"  component={Checkout}/>
+                <Route  exact path="/contact-us"  component={ContactUs}/>
+                <Route  exact path="/login"  component={Login}/>
+                <Route  exact path="/signup"  component={SignUp}/>
                 <Footer></Footer>
             </div>
         );

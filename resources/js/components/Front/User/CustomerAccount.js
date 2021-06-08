@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Navbar from '../NavBar'
 import {Tab,Tabs} from 'react-bootstrap'
 import MyOrders from './MyOrders'
 import MyAccount from './Myaccount'
@@ -52,7 +51,6 @@ class CustomerAccount extends Component {
         return (
 
             <div >
-                <Navbar></Navbar>
                 {
                     
                    this.state.loading ? 
@@ -62,7 +60,7 @@ class CustomerAccount extends Component {
                             </div>
                         </div>
                     :<> 
-                    <div className="products_page container">
+                    <div className="products_page container mt-5">
                     <h2 className="page_title">Account</h2>
                 </div>
                 <div className="container padding-bottom-3x mb-2 mt-3">

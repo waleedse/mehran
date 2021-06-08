@@ -32,22 +32,13 @@ class Slider extends Component {
             >
 
                         <div className="landingSliderBg" style={{backgroundImage:`url(/images/1606059807.png`}}>
-                            {/* <div className="container">
-                            <div className="row trueRow">
-                                <div className="col-12 pt-5 ">
-                                <h1 className="trueTitle">
-                                    TRUE ECN <br /> FOREX BROKER
-                                </h1>
-                                <p className="trueDescription">
-                                    True ECN Spreads From 0.0 Pips
-                                </p>
-                                <div className="trueButtonBox">
-                                    <button onClick={()=>{ window.open('https://secure.cabanacapitals.com/login/','_self')}} className="btnLogin">LOG IN</button>
-                                    <button onClick={()=>{ window.open('https://secure.cabanacapitals.com/register/','_self')}} className="btnSignUp">SIGN UP</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div> */}
+                        <div className="container">
+
+                        <div className=" trueRow text-center">
+                        <h2 style={{fontSize:'38px',fontWeight:'700',paddingTop:'180px'}}>Good Sleep Starts with <br></br>Chairman Foam</h2>
+                        {/* <h6 style={{fontSize:'22px text-center'}}>Good Sleep Starts with Chairman Foam</h6> */}
+                        </div>
+                        </div>
                         </div>
                        
 

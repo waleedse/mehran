@@ -194,7 +194,7 @@ class SignUp extends Component {
                                 <div className="loginDivider"></div>
                                 <div className="text-center mb-4">
                                 <p className=" text-secondary">
-                                    Are you new to Chairman's Foam ?{" "}
+                                   Already have an account ?{" "}
                                     <span
                                     className="text-danger danger_text"
                                     onClick={this.signUpModal.bind(this)}

@@ -22,6 +22,7 @@ import ResetPassword from './Front/User/ResetPassword';
 import FrontIndex from './Front/Container/Index';
 import DistributorIndex from './Front/Distributors/Index';
 
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -29,6 +30,7 @@ class App extends React.Component {
             routes:['/Products/:id','/Product/:id','/Aboutus',
             '/Shop','/faqs','/PrivacyPolicy','/TermsAndconditions',
             '/CustomerAccount','/Cart','/Checkout','/order-details',
+            '/contact-us','/login','/signup'
         ],
         disRoutes:['/distributor','/distributor/Products/:id','/distributor/product/:id'
         ,'/distributor/cart','/distributor/login','/distributor/signup','/distributor/account',

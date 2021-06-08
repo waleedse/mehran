@@ -64,7 +64,7 @@ class Faq extends Component {
         return (
             <div>
                 <div className="container">
-                    <h1 className="title-text text-center">FAQ's</h1>
+                    <h1 className="title-text text-center mt-5">FAQ's</h1>
                     {
                         this.state.faqs.map((data,index)=>{
                             return(

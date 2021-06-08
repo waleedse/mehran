@@ -22,7 +22,8 @@ class Addproduct extends Component {
             p_enabled:true,
             p_featued:false,
             p_retail:true,
-            p_distribution:true
+            p_distribution:true,
+            p_short_description:''
         }
     }
     p_code(e){
@@ -68,6 +69,11 @@ class Addproduct extends Component {
     p_distribution(e){
         this.setState({
             p_distribution:!this.state.p_distribution
+        })
+    }
+    p_short_distribution(e){
+        this.setState({
+            p_short_description:e.target.value
         })
     }
     componentDidMount(){
@@ -180,7 +186,8 @@ class Addproduct extends Component {
             p_retail: this.state.p_retail,
             p_distribution:this.state.p_distribution,
             varients:this.state.varients,
-            files:this.state.imageArray
+            files:this.state.imageArray,
+            p_short_description:this.state.p_short_distribution
         }
         console.log(senderdata);
         Axios.post(baseurl+'/api/add_product', senderdata)
@@ -262,7 +269,11 @@ class Addproduct extends Component {
 
                         <div className="row col-md-12">
                             <div class="form-group input_div   col-md-6">
-                                <label className="input_label" for="exampleInputEmail1">Product Description</label>
+                                <label className="input_label" for="exampleInputEmail1">Product Short Description</label>
+                                <textarea onChange={this.p_short_distribution.bind(this)}  type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp"  />
+                            </div>
+                            <div class="form-group input_div   col-md-6">
+                                <label className="input_label" for="exampleInputEmail1">Product  Description</label>
                                 <textarea onChange={this.p_description.bind(this)}  type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp"  />
                             </div>
                             <div class="form-group input_div col-md-6">

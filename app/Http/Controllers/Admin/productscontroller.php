@@ -53,6 +53,7 @@ class productscontroller extends Controller
             $new_product->retail = $request->p_retail;
             $new_product->distribution = $request->p_distribution;
             $new_product->featuerd = $request->p_featuerd;
+            $new_product->p_short_description = $request->p_short_description;
             $new_product->save();
                 $name = '';
                 foreach ($request['files'] as $file) {
@@ -491,6 +492,7 @@ class productscontroller extends Controller
         $new_product->retail = $request->p_retail;
         $new_product->distribution = $request->p_distribution;
         $new_product->featuerd = $request->p_featuerd;
+        $new_product->p_short_description = $request->p_short_description;
         $new_product->save();
     }
     public function addcategory(Request $request){

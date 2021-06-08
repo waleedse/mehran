@@ -1,6 +1,5 @@
 import Axios from 'axios';
 import React, { Component } from 'react';
-import Navbar from '../NavBar'
 import {img_baseurl} from '../../Configs/apibase'
 class Orderdetails extends Component {
     constructor(props) {
@@ -32,7 +31,6 @@ class Orderdetails extends Component {
     render() {
         return (
             <div>
-                <Navbar></Navbar>
                 {
                     
                     this.state.loading ? 

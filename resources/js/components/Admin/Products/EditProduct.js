@@ -22,12 +22,19 @@ class EditProduct extends Component {
             p_enabled:true,
             p_featued:false,
             p_retail:true,
-            p_distribution:true
+            p_distribution:true,
+            p_short_description:''
         }
     }
+    
     p_code(e){
         this.setState({
             p_code:e.target.value
+        })
+    }
+    p_short_description(e){
+        this.setState({
+            p_short_description:e.target.value
         })
     }
     p_name(e){
@@ -104,6 +111,7 @@ class EditProduct extends Component {
                 sub_cat_id:dat.sub_cat_id,
                 imageArray:dat.images,
                 varients:dat.varients,
+                p_short_description:dat.p_short_description
             },function(){
                 let arr = [];
             this.state.all_subcategories.map((data,index)=>{
@@ -294,7 +302,8 @@ let senderdata = {
             p_distribution:this.state.p_distribution,
             files:this.state.imageArray,
             varients:this.state.varients,
-            id:this.props.match.params.id
+            id:this.props.match.params.id,
+            p_short_description:this.state.p_short_description
         }
         Axios.post(baseurl+'/api/update_product',senderdata).then(res=>{
             Swal.fire({
@@ -327,6 +336,10 @@ let senderdata = {
                         </div>
 
                         <div className="row col-md-12">
+                            <div class="form-group input_div   col-md-6">
+                                <label className="input_label" for="exampleInputEmail1">Product Short Description</label>
+                                <textarea value={this.state.p_short_description || ""} onChange={this.p_short_description.bind(this)}  type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Product Description" />
+                            </div>
                             <div class="form-group input_div   col-md-6">
                                 <label className="input_label" for="exampleInputEmail1">Product Description</label>
                                 <textarea value={this.state.p_description || ""} onChange={this.p_description.bind(this)}  type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Product Description" />

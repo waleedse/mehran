@@ -23,35 +23,7 @@ export default class Footer extends Component {
                 Chairman Foam <br />
                 64 Block M, Gulberg III, Lahore, <br></br>Punjab, Pakistan، Block P Gulberg III,<br></br> Lahore, Punjab
               </p>
-              <div className="footerSocialBox">
-                <div className="footerSocialCircle">
-                <a href="https://www.facebook.com/chairmanfoam/">
-                  <img
-                    src="/images/socialIcon1.png"
-                    alt="social"
-                    className="footerSocialImage"
-                  ></img>
-                  </a>
-                </div>
-                <div className="footerSocialCircle">
-                <a href="https://www.instagram.com/chairmanfoam/?igshid=7pcd3d8n7uuw">
-                  <img
-                    src="/images/socialIcon2.png"
-                    alt="social"
-                    className="footerSocialImage"
-                  ></img>
-                  </a>
-                </div>
-                {/* <div className="footerSocialCircle">
-                    <a href="https://www.facebook.com/chairmanfoam/">
-                  <img
-                    src="/images/socialIcon3.png"
-                    alt="social"
-                    className="footerSocialImage"
-                  ></img>
-                  </a>
-                </div> */}
-              </div>
+              
             </div>
           </div>
           {/* {"\u00BB"} */}
@@ -77,12 +49,40 @@ export default class Footer extends Component {
           </div>
 
           <div className="col-md-4 col-sm-12 footerCol">
-            <h3 className=" footerLinkTitle">CONTACT</h3>
-            <a href="/our-location" >
+            <h3 className=" footerLinkTitle">Social Media</h3>
+           
 
-            <p className="footerLinkText pt-3"> Our Location</p>
-
-            </a>
+            <div className="footerSocialBox">
+                <div className="footerSocialCircle">
+                  <a href="https://www.facebook.com/chairmanfoam/">
+                  <img
+                    src="/images/socialIcon1.png"
+                    alt="social"
+                    className="footerSocialImage"
+                  ></img>
+                  </a>
+                </div>
+                <div className="footerSocialCircle text-center">
+                <a href="https://www.instagram.com/chairmanfoam/?igshid=7pcd3d8n7uuw">
+                  {/* <img
+                    src="/images/socialIcon2.png"
+                    alt="social"
+                    className="footerSocialImage"
+                  ></img> */}
+                  <i className="fab fa-instagram text-light  pt-2"></i>
+                  </a>
+                </div>
+                {/* <div className="footerSocialCircle">
+                    <a href="https://www.facebook.com/chairmanfoam/">
+                  <img
+                    src="/images/socialIcon3.png"
+                    alt="social"
+                    className="footerSocialImage"
+                  ></img>
+                  </a>
+                </div> */}
+              </div>
+          
             {/* <p className="footerLinkText"> Contact Us</p> */}
           </div>
           </div>

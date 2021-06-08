@@ -41,7 +41,7 @@ class Shop extends Component {
                            null
                        }
                        <h2 className="product_tile_title">{data.name}</h2>
-                       <p className="text-light short_des">Comfortable and supportive. Our signature foam mattress.</p>
+                       <p className="text-light short_des">{data.p_short_description}</p>
                        <div className="pricing_div">
                        <h2 className="product_tile_price"> <span>
                            <NumberFormat value={data.cheep_varient.price} displayType={'text'} thousandSeparator={true} prefix={'FROM Rs. '} renderText={value => <div>{value}</div>} />

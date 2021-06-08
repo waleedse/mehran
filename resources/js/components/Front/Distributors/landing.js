@@ -151,7 +151,7 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                      Huge Trade Discount for the distributors
+                    An exclusive chance to get associated with one of the leading brands in foam industry of Pakistan 
                     </h3>
                   </div>
                 </div>
@@ -163,15 +163,15 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                      Earn exclusive loyalty points based on:
+                    Huge Trade Discount for the distributors
                     </h3>
-                    <p className="retailerDescriptionLite pl-2 pr-2">
+                    {/* <p className="retailerDescriptionLite pl-2 pr-2">
                       {"\u25CF"} Bulk buying (in addition to trade discounts)
                       <br></br>
                       {"\u25CF"} Earn More as you sell more!. Achiving or
                       Over-achiving monthly sales target. A distributor achiving
                       the monthly sales target will earn our Loyalty rewards
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>
@@ -182,12 +182,12 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                      Personalized Online Portal
+                    Earn exclusive loyalty points based on bulk buying and achieving monthly targets 
                     </h3>
-                    <p className="retailerDescriptionLite pl-4 pr-4">
+                    {/* <p className="retailerDescriptionLite pl-4 pr-4">
                       Our online Portal enables the top of range online ordering
                       system for the distributors.
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </div>
@@ -199,7 +199,7 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                      Dedicated account management and support
+                    Personalised Online Portal for orders 
                     </h3>
                   </div>
                 </div>
@@ -211,8 +211,7 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                      Exclusive content on request including offers and
-                      competitions for your audience
+                    Dedicated account management and support
                     </h3>
                   </div>
                 </div>
@@ -224,7 +223,8 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                      Market-specific marketing planning and excution
+                    Exclusive content on request including offers and competitions for your audience
+
                     </h3>
                   </div>
                 </div>
@@ -236,8 +236,32 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                      Assortment: Full access to range of Chiarman Foam and
-                      mattresses and accessories across a discounted price range
+                    Market-specific marketing planning and execution
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6 col-sm-12">
+                <div className="retailerPointsCol">
+                  <div className="blueCircle">
+                    <h2 className="blueCircleText">8</h2>
+                  </div>
+                  <div className="retailerDescriptionBox">
+                    <h3 className="retailerDescription">
+                    Assortment: Full access to range of Chairman Foam mattresses and accessories across a discounted price range
+
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6 col-sm-12">
+                <div className="retailerPointsCol">
+                  <div className="blueCircle">
+                    <h2 className="blueCircleText">9</h2>
+                  </div>
+                  <div className="retailerDescriptionBox">
+                    <h3 className="retailerDescription">
+                    24/7 availability of  Chairman support team for assistance
                     </h3>
                   </div>
                 </div>
