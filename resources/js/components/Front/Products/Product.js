@@ -263,7 +263,7 @@ class Products extends Component {
                             <div className="col-lg-4 col-md-6 col-sm-12">
                                 <div className="featureValueBox text-dark text-center">
                                     <img className="ValueIcon " src={img_baseurl+data.image}></img>
-                                    <h3 className="featureItemText mt-2">
+                                    <h3 className="featureItemText mt-2 text-dark">
                                    {data.name}
                                     </h3>
                                     <p className="subtext mb-1 ">{data.description}</p>
