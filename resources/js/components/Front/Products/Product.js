@@ -15,7 +15,7 @@ const responsive = {
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3
+    items: 4
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -261,7 +261,7 @@ class Products extends Component {
                         <div className="row feature-row mt-4">
                             <h1 className="col-lg-1 ml-5"></h1>
                             <div className="col-lg-4 col-md-6 col-sm-12">
-                                <div className="featureValueBox text-center">
+                                <div className="featureValueBox text-dark text-center">
                                     <img className="ValueIcon " src={img_baseurl+data.image}></img>
                                     <h3 className="featureItemText mt-2">
                                    {data.name}
