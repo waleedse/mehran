@@ -11,7 +11,7 @@ class faeture2 extends Component {
                 trust
             </p>
             </div>
-            <div  className="row depositCardRow ml-5">
+            <div  className="row depositCardRow margin_web">
 
           <div className="col-lg-1 col-md-6 col-sm-12 depositCard"></div>
           <div className="col-lg-3 col-md-6 col-sm-12  depositCard">

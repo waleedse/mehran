@@ -25,7 +25,17 @@
   font-size: 14px;
   font-weight: bold;
 }
+.headerImage{
+    width: 180px;
+}
+.navbar-dark .navbar-toggler-icon{
+    margin-top: -65px ;
+}
 @media screen and (min-width:480px){
+    .margin_web{
+        margin-left: 3.5rem !important;
+    }
+
   .top_image{
     height: 500px !important;
     width: 100%;
@@ -54,9 +64,7 @@
         width: 100%;
         background: transparent !important;
     }
-    .headerImage{
-        width: 180px;
-    }
+
     .des_menu_text{
       font-size: 12px;
     }
@@ -298,6 +306,12 @@
     #navbarSupportedContent{
         height: 300px !important;
     }
+    .trueRow{
+        padding-top: 30px !important;
+    }
+    .product_margin{
+        margin-left: 15px;
+    }
     .mob_left{
       text-align: left !important;
     }
@@ -511,7 +525,7 @@ demo-div {
 
   .journey_bg{
     background-image: url("/images/bluemattresslayer.png");
-    background-position: center;
+    background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
     height: 520px;
@@ -783,7 +797,7 @@ demo-div {
 }
 @media screen and (max-width:480px){
   .navbar-collapse{
-    height: 350px !important;
+    /* height: 350px !important; */
     overflow: scroll !important;
     margin-left: 20px !important;
   }
@@ -1700,7 +1714,7 @@ a.list-group-item, .list-group-item-action {
     transition-delay: 0.6s;
     -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    background-color: #291023;
+    background-color: #021a34;
   }
   .headerMobileActive {
     transform: translateX(0);

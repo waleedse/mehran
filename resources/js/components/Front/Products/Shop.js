@@ -25,7 +25,7 @@ class Shop extends Component {
             <div>
                 <div className="products_page ">
                     <h2 className="page_title mt-5">Our Products</h2>
-                    <div className="row">
+                    <div className="row product_margin">
                         {
             this.state.products.map((data,index)=>{
               return(

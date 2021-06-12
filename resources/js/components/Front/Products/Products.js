@@ -48,7 +48,7 @@ class Products extends Component {
                         :null
                     }
 
-                    <div className="row">
+                    <div className="row product_margin" >
                         {
 
             this.state.products.map((data,index)=>{

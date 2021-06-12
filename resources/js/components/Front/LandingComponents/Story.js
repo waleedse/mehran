@@ -3,12 +3,12 @@ export default class Story extends Component {
   render() {
     return (
       <div>
-        <div className="row storyRow">
-          <div className="col-md-4 col-sm-12 storyTextBox">
+        <div className="row storyRow ml-0">
+          <div className="col-md-4 col-sm-12  storyTextBox">
             <h1 className="title-text mt-5">
               <span className="redDivider">Our</span> Story
             </h1>
-            <p className="text-secondary justify-content mt-4">
+            <p className="text-secondary justify-content mt-4 px-2">
               Trusted by generations, Mehran has become a household name for 35 years. Established in 1985,
               Mehran is the pioneer brand in the foam industry and holds the success due to its premium quality,
               innovation and positive feedback from customers, suppliers and the community over the years. Mehran
