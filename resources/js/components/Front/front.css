@@ -742,8 +742,23 @@ demo-div {
     overflow: hidden;
 
   }
-
+  .page_header_padding{
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .page_bg{
+      background-color: #021a34;
+  }
+  .page_title_{
+      font-size: 64px;
+      color: #fff;
+      font-weight: 800;
+  }
   @media screen and (min-width:480px){
+    .web_slide_padding{
+        padding-top: 380px !important;
+        margin-left: -110px;
+    }
     @keyframes fadeUpScale {
         0% {
             transform: translate(0,70%);
@@ -907,20 +922,64 @@ demo-div {
     margin-bottom: 5px;
   }
 .card_title_bg{
-  background-color: #f7f7f7;
+  background-color: #f7f7f700;
   margin: 0;
-  padding: 8px;
+  padding: 15px 10px 15px 10px;
   cursor: pointer;
   font-size: 20px;
   font-family: Poppins-Regular;
 }
 .card-body-text{
-  font-size: 14px;
+  font-size: 16px;
   font-family: Poppins-Regular;
 }
 .pages-text{
   font-size: 16px;
   font-family: Poppins-Regular;
+}
+
+/* Feature Product New Tile Css */
+.feature_product_card{
+    background-color: #fff;
+    border-radius: 0px;
+    border: 0px solid #fff;
+    width: 320px;
+}
+
+.feature_product_img{
+    width: 100%;
+    margin-top: -90px;
+}
+
+.feature_procduct_title{
+    font-weight: 300;
+    font-size: 18px;
+    text-transform: uppercase;
+
+}
+
+.feature_product_price{
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.feature_product_des{
+    font-size: 16px;
+    font-weight: 500;
+}
+#feature_products .react-multi-carousel-track{
+    height: 500px !important;
+}
+.feature_product_btn{
+    border-radius: 1px;
+    background-color: #0cc6de;
+    padding: 15px 20px 15px 20px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 10px;
+    border: 1px solid #fff;
+    width: 100%;
+    margin-top: 50px;
 }
 
 /* cart css */

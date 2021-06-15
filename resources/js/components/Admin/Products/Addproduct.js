@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import React, { Component } from 'react';
-import {baseurl} from '../../Configs/apibase'
+import {baseurl, img_baseurl} from '../../Configs/apibase'
 import Swal from 'sweetalert2'
 
 class Addproduct extends Component {
@@ -23,7 +23,9 @@ class Addproduct extends Component {
             p_featued:false,
             p_retail:true,
             p_distribution:true,
-            p_short_description:''
+            p_short_description:'',
+            feature_image:'noimage.png',
+            progress:0
         }
     }
     p_code(e){
@@ -155,9 +157,47 @@ class Addproduct extends Component {
                     console.log(this.state.imageArray);
                 })
             }, error => { console.error(error); });
-           
+
         }
-        
+
+    }
+    uploadfile(event) {
+        const formData = new FormData();
+        formData.append('file', event.target.files[0]);
+        formData.append('token', window.localStorage.getItem('al'));
+        formData.append('id',this.props.match.params.id);
+        let Configs = {
+            headers: {
+                token: window.localStorage.getItem('al'),
+                'content-type': false,
+                'mime-type': "multipart/form-data",
+            },
+            onUploadProgress: progressEvent => {this.setState({
+               progress: Math.round( (progressEvent.loaded * 100) / progressEvent.total )
+            })}
+        }
+
+        Axios.post('/api/upload_file', formData, Configs).then(res => {
+            this.setState({
+                feature_image: res.data.url
+            })
+            if (res.data.status == 200) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'File Uploaded Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: res.data.msg,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        })
+
     }
     handleSubmit(e) {
         e.preventDefault();
@@ -171,7 +211,7 @@ class Addproduct extends Component {
         //     formData.append('p_varients[]', varient);
         // });
         if(this.state.p_code != '' && this.state.p_name != '' && this.state.p_description
-        != '' && this.state.p_varient_type != '' && this.state.p_quantity_type != '' && this.state.cat_id 
+        != '' && this.state.p_varient_type != '' && this.state.p_quantity_type != '' && this.state.cat_id
         != '' && this.state.sub_cat_id != '' && this.state.varients.length > 0 && this.state.imageArray.length > 0){
         let senderdata = {
             p_code:this.state.p_code,
@@ -187,14 +227,15 @@ class Addproduct extends Component {
             p_distribution:this.state.p_distribution,
             varients:this.state.varients,
             files:this.state.imageArray,
-            p_short_description:this.state.p_short_distribution
+            p_short_description:this.state.p_short_distribution,
+            feature_image:this.state.feature_image
         }
         console.log(senderdata);
         Axios.post(baseurl+'/api/add_product', senderdata)
             .then(response => {
                 if(response.data != 0){
                 console.log(response);
-                this.props.history.push('ProductLists'); 
+                this.props.history.push('ProductLists');
             this.setState({
                urll:'/public/images/'+response.data
 
@@ -207,7 +248,7 @@ class Addproduct extends Component {
                     timer: 1500
                     })
                 }
-                
+
         });
         this.setState({
             body: ''
@@ -220,7 +261,7 @@ class Addproduct extends Component {
                 timer: 1500
                 })
         }
-        
+
     }
     onchangevarient(val,ind){
         let temp_arr = this.state.varients;
@@ -343,7 +384,21 @@ class Addproduct extends Component {
                                 })
                             }
                             </div>
-                          
+
+                           </div>
+                           <div className="form-group input_div col-md-4">
+                            <label for="img" className="input_label" for="exampleInputEmail1">Featured Product Image
+                                {
+                                    this.state.progress != 0 ? ' '+ this.state.progress+'%' : ''
+                                }
+                            </label>
+                            <input id="img" aria-describedby="emailHelp" onChange={this.uploadfile.bind(this)} type="file"></input>
+                        </div>
+                        <div className="card container-fluid col-md-12">
+                        <div className="card img_card">
+                                            <img src={img_baseurl+this.state.feature_image}></img>
+                                        </div>
+
                            </div>
                         <div className=" mt-3 card varient_card">
                             <div className="col-md-12 row">

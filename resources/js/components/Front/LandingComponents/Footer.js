@@ -5,7 +5,7 @@ export default class Footer extends Component {
   render() {
     return (
       <div className="container-fluid px-0 ">
-      
+
         <div className=" footerRow">
           <div className="conatiner pb-5">
           <hr className="bg-light"></hr>
@@ -21,9 +21,11 @@ export default class Footer extends Component {
               <h3 className="footerTitle">Registered Office</h3>
               <p className="footerText">
                 Chairman Foam <br />
-                64 Block M, Gulberg III, Lahore, <br></br>Punjab, Pakistan، Block P Gulberg III,<br></br> Lahore, Punjab
+                64 Block M, Gulberg III,  Lahore, Punjab
+                <br></br>
+                +92-42-3544-1671 ,  +92-42-3544-1672
               </p>
-              
+
             </div>
           </div>
           {/* {"\u00BB"} */}
@@ -50,7 +52,7 @@ export default class Footer extends Component {
 
           <div className="col-md-4 col-sm-12 footerCol">
             <h3 className=" footerLinkTitle">Social Media</h3>
-           
+
 
             <div className="footerSocialBox">
                 <div className="footerSocialCircle">
@@ -72,6 +74,16 @@ export default class Footer extends Component {
                   <i className="fab fa-instagram text-light  pt-2"></i>
                   </a>
                 </div>
+                <div className="footerSocialCircle text-center">
+                <a href="mailto:info@chairmanfoam.com">
+                  {/* <img
+                    src="/images/socialIcon2.png"
+                    alt="social"
+                    className="footerSocialImage"
+                  ></img> */}
+                  <i className="far fa-envelope text-light  pt-2"></i>
+                  </a>
+                </div>
                 {/* <div className="footerSocialCircle">
                     <a href="https://www.facebook.com/chairmanfoam/">
                   <img
@@ -82,7 +94,7 @@ export default class Footer extends Component {
                   </a>
                 </div> */}
               </div>
-          
+
             {/* <p className="footerLinkText"> Contact Us</p> */}
           </div>
           </div>
@@ -92,7 +104,7 @@ export default class Footer extends Component {
             Copyright 2021 {"\u00A9"} Chairman Foam All Right Reserved
           </h5>
         </div>
-       
+
       </div>
     );
   }

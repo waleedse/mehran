@@ -39,11 +39,12 @@ export default class Projects extends Component {
   }
   render() {
     return (
-      <div className="py-5 container">
+      <div className="py-5 bg-light" id="feature_products">
         <h1 className=" title-div title-text text-center">
           Check Out Our{" "}
           <span style={{ color: "#da232F" }}>Popular Products</span>
         </h1>
+        <div className="mt-5 container">
         <Carousel
           swipeable={false}
           draggable={false}
@@ -60,45 +61,27 @@ export default class Projects extends Component {
           // removeArrowOnDeviceType={["tablet", "mobile"]}
           deviceType={this.props.deviceType}
           dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
+          itemClass="carousel-item-padding-40-px mt-5"
           >
           {
             this.state.products.map((data,index)=>{
               return(
-                <a href={"/Product/"+data.id}>  <div className="col-lg-3 col-md-6 col-sm-12 ">
-                            <div className="popProductCard text-center">
-                                {
-                                    data.cheep_varient.discount > 0 ?
-                                    <div className=" redCircle  ">
-                                    <h3 className="pt-2 text-white">{Math.round(data.cheep_varient.discount / data.cheep_varient.original_price * 100)}%</h3>
-                                    <p className="text-white paraText">OFF</p>
-                                    </div>:
-                                null
-                             }
+               <div className=" col-lg-4 col-md-6 mt-5 col-sm-12 px-3">
+                   <div className="card p-3 text-center feature_product_card">
 
+                        <img className="feature_product_img" src={img_baseurl+data.feature_image}></img>
+                        <h2 className="feature_procduct_title">{data.name}</h2>
+                        <h2 className="feature_product_price mt-3"><NumberFormat value={data.cheep_varient.price} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} renderText={value => <div>{value}</div>} /></h2>
+                        <h4 className="feature_product_des mt-3">{data.p_short_description}</h4>
 
-                            {
-                                data.images.length > 0 ?
-                                <img className="popImage" src={img_baseurl+data.images[0].image}></img>
-                                :<img className="popImage" src={"/images/noimage.png"}></img>
-                            }
-                            <h1 className=" text-bold featureItemText pt-2 text-dark">{data.name}</h1>
-                            <div className="row priceRow">
-                                <div className="col-6">
-                                <div className="priceCancelText text-secondary">{data.cheep_varient.discount > 0 ? data.cheep_varient.original_price : null}</div>
-                                </div>
-                                <div className="col-6">
-                                <div className="priceText">
-                                <NumberFormat value={data.cheep_varient.price} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} renderText={value => <div>{value}</div>} />
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div></a>
+                        <button onClick={()=>{window.open(`/Product/${data.id}`)}} className="feature_product_btn">SHOP NOW</button>
+                   </div>
+               </div>
               )
             })
           }
         </Carousel>
+        </div>
         <div className="row popProductRow">
 
         </div>

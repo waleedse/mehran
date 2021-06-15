@@ -23,10 +23,12 @@ class EditProduct extends Component {
             p_featued:false,
             p_retail:true,
             p_distribution:true,
-            p_short_description:''
+            p_short_description:'',
+            feature_image:'noimage.png',
+            progress:0
         }
     }
-    
+
     p_code(e){
         this.setState({
             p_code:e.target.value
@@ -111,7 +113,8 @@ class EditProduct extends Component {
                 sub_cat_id:dat.sub_cat_id,
                 imageArray:dat.images,
                 varients:dat.varients,
-                p_short_description:dat.p_short_description
+                p_short_description:dat.p_short_description,
+                feature_image:dat.feature_image
             },function(){
                 let arr = [];
             this.state.all_subcategories.map((data,index)=>{
@@ -156,7 +159,7 @@ class EditProduct extends Component {
             id:id
         }
         Axios.post(baseurl+'/api/deletep_variations',senderdata).then(res=>{
-           
+
             var varients = this.state.varients;
             varients.splice(i,1);
             this.setState({
@@ -208,9 +211,47 @@ class EditProduct extends Component {
                     console.log(this.state.imageArray);
                 })
             }, error => { console.error(error); });
-           
+
         }
-        
+
+    }
+    uploadfile(event) {
+        const formData = new FormData();
+        formData.append('file', event.target.files[0]);
+        formData.append('token', window.localStorage.getItem('al'));
+        formData.append('id',this.props.match.params.id);
+        let Configs = {
+            headers: {
+                token: window.localStorage.getItem('al'),
+                'content-type': false,
+                'mime-type': "multipart/form-data",
+            },
+            onUploadProgress: progressEvent => {this.setState({
+               progress: Math.round( (progressEvent.loaded * 100) / progressEvent.total )
+            })}
+        }
+
+        Axios.post('/api/upload_file', formData, Configs).then(res => {
+            this.setState({
+                feature_image: res.data.url
+            })
+            if (res.data.status == 200) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'File Uploaded Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: res.data.msg,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        })
+
     }
     handleSubmit(e) {
         e.preventDefault();
@@ -224,10 +265,10 @@ class EditProduct extends Component {
         //     formData.append('p_varients[]', varient);
         // });
         if(this.state.p_code != '' && this.state.p_name != '' && this.state.p_description
-        != '' && this.state.p_varient_type != '' && this.state.p_quantity_type != '' && this.state.cat_id 
+        != '' && this.state.p_varient_type != '' && this.state.p_quantity_type != '' && this.state.cat_id
         != '' && this.state.sub_cat_id != '' && this.state.varients.length > 0){
 let senderdata = {
-            
+
             p_code:this.state.p_code,
             p_name: this.state.p_name,
             p_description: this.state.p_description,
@@ -240,13 +281,14 @@ let senderdata = {
             p_retail: this.state.p_retail,
             p_distribution:this.state.p_distribution,
             files:this.state.imageArray,
-            varients:this.state.varients
+            varients:this.state.varients,
+            feature_image:this.state.feature_image
         }
-       
+
         Axios.post(baseurl+'/api/add_product', senderdata)
             .then(response => {
                 console.log(response);
-           
+
         });
         this.setState({
             body: ''
@@ -259,7 +301,7 @@ let senderdata = {
                 timer: 1500
                 })
         }
-        
+
     }
     onchangevarient(val,ind){
         let temp_arr = this.state.varients;
@@ -288,7 +330,7 @@ let senderdata = {
 
     update_product(){
         let senderdata = {
-            
+
             p_code:this.state.p_code,
             p_name: this.state.p_name,
             p_description: this.state.p_description,
@@ -303,7 +345,8 @@ let senderdata = {
             files:this.state.imageArray,
             varients:this.state.varients,
             id:this.props.match.params.id,
-            p_short_description:this.state.p_short_description
+            p_short_description:this.state.p_short_description,
+            feature_image:this.state.feature_image
         }
         Axios.post(baseurl+'/api/update_product',senderdata).then(res=>{
             Swal.fire({
@@ -411,7 +454,21 @@ let senderdata = {
                                 })
                             }
                             </div>
-                          
+
+                           </div>
+                           <div className="form-group input_div col-md-4">
+                            <label for="img" className="input_label" for="exampleInputEmail1">Featured Product Image
+                                {
+                                    this.state.progress != 0 ? ' '+ this.state.progress+'%' : ''
+                                }
+                            </label>
+                            <input id="img" aria-describedby="emailHelp" onChange={this.uploadfile.bind(this)} type="file"></input>
+                        </div>
+                        <div className="card container-fluid col-md-12">
+                        <div className="card img_card">
+                                            <img src={img_baseurl+this.state.feature_image}></img>
+                                        </div>
+
                            </div>
                         <div className="card varient_card mt-3">
                             <div className="col-md-12 row">

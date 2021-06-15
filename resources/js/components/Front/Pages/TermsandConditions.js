@@ -4,13 +4,16 @@ class PrivacyPolicy extends Component {
     render() {
         return (
             <div>
-                <div className="container">
-                    <h1 className="title-text text-center mb-3 mt-5">TERMS AND CONDITIONS</h1>
+                  <div className="page_bg text-center page_header_padding">
+                    <h1 className="title-text page_title_ text-center ">TERMS AND CONDITIONS</h1>
+                </div>
+                <div className="container mt-5">
+                    {/* <h1 className="title-text text-center mb-3 mt-5">TERMS AND CONDITIONS</h1> */}
 
                     <div>
                         <h6 className="pages-text">
-                        These terms and conditions outline the rules and regulations for the use of Chairman Foam Website and applies 
-                        to orders placed online, over the phone or through brochures. It is your responsibility to check the dimensions 
+                        These terms and conditions outline the rules and regulations for the use of Chairman Foam Website and applies
+                        to orders placed online, over the phone or through brochures. It is your responsibility to check the dimensions
                         of all goods to ensure that they will fit into your product before accepting the order. <br></br> <br></br>
                         The Site allows you to browse, select and purchase Mattresses and Accessories ("Goods" or "Products" or "Services"). <br></br> <br></br>
                         Your use of this website www.chairmanfoam.com (hereinafter referred to as the "Site") and its related sites, services and tools). These terms and conditions are effective upon acceptance and governs the relationship between you and Chairman Foam Pvt. Ltd a company incorporated under The Companies Ordinance, 1984 (Pakistan) having its registered office at 64 Block M, Gulberg III, Lahore, Pakistan (hereinafter the "Company") including the sale and supply of any Products on the Site. If these terms and conditions conflicts with any other document, the terms and conditions will prevail for the purposes of usage of the Site. If you do not agree to be bound by these terms and conditions and the Privacy Policy, you may not use the Site in any way. For the purposes of this terms and conditions, the term 'Acceptance' shall mean your affirmative action in clicking on 'checkbox' and on the 'continue button' as provided on the registration page or such other actions that implies your acceptance. <br></br> <br></br>

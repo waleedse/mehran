@@ -24,6 +24,8 @@ use App\AutomaticDiscount;
 use App\Dis_Order;
 use DateTime;
 use App\Discountcode;
+use Exception;
+
 class productscontroller extends Controller
 {
     /**
@@ -54,6 +56,7 @@ class productscontroller extends Controller
             $new_product->distribution = $request->p_distribution;
             $new_product->featuerd = $request->p_featuerd;
             $new_product->p_short_description = $request->p_short_description;
+            $new_product->feature_image = $request->feature_image;
             $new_product->save();
                 $name = '';
                 foreach ($request['files'] as $file) {
@@ -83,7 +86,24 @@ class productscontroller extends Controller
         }else{
             return 0;
         }
-        
+
+    }
+    public function upload_file(Request $request){
+        try{
+            if ($request->hasFile('file')) {
+                $file = $request->file;
+                $filename = $file->getClientOriginalName();
+                $image = date('His') . $filename;
+                $destination_path = public_path() . '/images/';
+                $file->move($destination_path, $image);
+                $url = $image;
+                $response = ['status' => 200 , 'msg' =>'File Uploaded.','url' => $url];
+                return $response;
+            }
+        }catch(Exception $e){
+            $response = ['status' => 401 , 'msg' => 'File Uploaded.','error' => $e];
+            return $response;
+        }
     }
     public function get_all_products(Request $request){
         $products = DB::table('products')
@@ -362,7 +382,7 @@ class productscontroller extends Controller
                 $check = 1;
             }
         }
-        
+
         foreach($products as $p){
         $images = DB::table('product_images')->where('product_id',$p->id)->get();
         $p->images = $images;
@@ -398,8 +418,8 @@ class productscontroller extends Controller
         ->where('retail', '1')
         ->where('id',$request->id)
         ->get();
-       
-        
+
+
         foreach($products as $p){
         $images = DB::table('product_images')->where('product_id',$p->id)->get();
         $p->images = $images;
@@ -408,7 +428,7 @@ class productscontroller extends Controller
         $cheep_varient = $varients[0];
         $price = 0;
         foreach($varients as $v){
-           
+
             $dis = Distributor::where('token',$request->dis_token)->first();
                 $d_v = null;
                 if($dis){
@@ -424,7 +444,7 @@ class productscontroller extends Controller
                     $v->discount_id = 0 ;
                     $v->original_price = $v->price;
                 }
-            
+
             if($cheep_varient->price > $v->price){
                 $cheep_varient = $v;
             }
@@ -439,7 +459,7 @@ class productscontroller extends Controller
             $c->subcategories = DB::table('subcategories')
                                         ->where('cat_id',$c->id)
                                         ->get();
-                    
+
         }
         return $categories;
     }
@@ -493,6 +513,7 @@ class productscontroller extends Controller
         $new_product->distribution = $request->p_distribution;
         $new_product->featuerd = $request->p_featuerd;
         $new_product->p_short_description = $request->p_short_description;
+        $new_product->feature_image = $request->feature_image;
         $new_product->save();
     }
     public function addcategory(Request $request){
@@ -522,7 +543,7 @@ class productscontroller extends Controller
             \Image::make($file[0])->save(public_path('images/') . $name);
         }
         $new_cat = new Subcategory();
-        $new_cat->cat_id = $request->cat_id; 
+        $new_cat->cat_id = $request->cat_id;
         $new_cat->name = $request->name;
         $new_cat->image = $name;
         $new_cat->save();
@@ -530,7 +551,7 @@ class productscontroller extends Controller
 
     public function update_Subcategory(Request $request){
         $up_cat = Subcategory::find($request->id);
-        $up_cat->cat_id = $request->cat_id; 
+        $up_cat->cat_id = $request->cat_id;
         $name = '';
         foreach ($request['files'] as $file) {
             $name = time() . '.' . explode('/', explode(':', substr($file[0], 0, strpos($file[0], ';')))[1])[1];
@@ -585,7 +606,7 @@ class productscontroller extends Controller
         $unenabled_products = Product::where('enabled',0)->get();
         $featured_products = Product::where('featuerd',1)->get();
         $distributors = Distributor::all();
-        $response = ['users' => sizeof($users) , 'products' => sizeof($products) , 
+        $response = ['users' => sizeof($users) , 'products' => sizeof($products) ,
         'orders' => sizeof($orders) , 'dis_orders' => sizeof($dis_orders) ,
          'enabled_products' => sizeof($enabled_products) ,
          'unenabled_products' => sizeof($unenabled_products) ,
@@ -608,7 +629,7 @@ class productscontroller extends Controller
            foreach($cat_subs as $cs){
                 $subs[] = $cs;
            }
-           
+
         }
         return $subs;
     }
@@ -635,7 +656,7 @@ class productscontroller extends Controller
         ]);
 
         if($validator->fails()){
-            $response = ['status' => 219 , 'msg' => $validator->errors()->first() , 
+            $response = ['status' => 219 , 'msg' => $validator->errors()->first() ,
             'errors' => $validator->errors()];
             return $response;
         }else{
@@ -646,7 +667,7 @@ class productscontroller extends Controller
             $code->enddate = $request->enddate;
             $code->status = 1;
             $code->save();
-            $response = ['status' => 200 , 'msg' => 'Discount Code Created Successfully' , 
+            $response = ['status' => 200 , 'msg' => 'Discount Code Created Successfully' ,
                 ];
             return $response;
         }
@@ -662,7 +683,7 @@ class productscontroller extends Controller
         ]);
 
         if($validator->fails()){
-            $response = ['status' => 219 , 'msg' => $validator->errors()->first() , 
+            $response = ['status' => 219 , 'msg' => $validator->errors()->first() ,
             'errors' => $validator->errors()];
             return $response;
         }else{
@@ -673,7 +694,7 @@ class productscontroller extends Controller
             $code->enddate = $request->enddate;
             $code->status = $request->status;
             $code->save();
-            $response = ['status' => 200 , 'msg' => 'Discount Code Updated Successfully' , 
+            $response = ['status' => 200 , 'msg' => 'Discount Code Updated Successfully' ,
                 ];
             return $response;
         }
@@ -690,7 +711,7 @@ class productscontroller extends Controller
         ]);
 
         if($validator->fails()){
-            $response = ['status' => 219 , 'msg' => $validator->errors()->first() , 
+            $response = ['status' => 219 , 'msg' => $validator->errors()->first() ,
             'errors' => $validator->errors()];
             return $response;
         }else{
@@ -708,7 +729,7 @@ class productscontroller extends Controller
                 $dis_var->discount = 0;
                 $dis_var->save();
             }
-            $response = ['status' => 200 , 'msg' => 'Automatic Discount Code Created Successfully' , 
+            $response = ['status' => 200 , 'msg' => 'Automatic Discount Code Created Successfully' ,
                 ];
             return $response;
         }
@@ -737,7 +758,7 @@ class productscontroller extends Controller
         ]);
 
         if($validator->fails()){
-            $response = ['status' => 219 , 'msg' => $validator->errors()->first() , 
+            $response = ['status' => 219 , 'msg' => $validator->errors()->first() ,
             'errors' => $validator->errors()];
             return $response;
         }else{
@@ -747,7 +768,7 @@ class productscontroller extends Controller
             $code->enddate = $request->enddate;
             $code->status = $request->status;
             $code->save();
-            $response = ['status' => 200 , 'msg' => 'Automatic Discount Code Updated Successfully' , 
+            $response = ['status' => 200 , 'msg' => 'Automatic Discount Code Updated Successfully' ,
                 ];
             return $response;
         }
@@ -759,15 +780,15 @@ class productscontroller extends Controller
         ]);
 
         if($validator->fails()){
-            $response = ['status' => 219 , 'msg' => $validator->errors()->first() , 
+            $response = ['status' => 219 , 'msg' => $validator->errors()->first() ,
             'errors' => $validator->errors()];
             return $response;
         }else{
             $code = Discountcode::where('name', $request->code)->where('status' , 1)->first();
             if($code){
-         
+
                 if(new DateTime($code->startdate) <= new DateTime("now") &&  new DateTime($code->enddate) >= new DateTime("now")){
-                    $response = ['status' => 200 , 'msg' => 'Code Validation successfull' , 'code' => $code ]; 
+                    $response = ['status' => 200 , 'msg' => 'Code Validation successfull' , 'code' => $code ];
                     return $response;
                 }else{
                     $response = ['status' => 219 , 'msg' => 'Discount Code is Expired.'
@@ -775,13 +796,13 @@ class productscontroller extends Controller
             return $response;
                 }
             }else{
-                $response = ['status' => 219 , 'msg' => 'Invalid Discount Code.' , 
+                $response = ['status' => 219 , 'msg' => 'Invalid Discount Code.' ,
             ];
             return $response;
             }
         }
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *

@@ -40,13 +40,13 @@ class Slider extends Component {
                         </div>
                         </div>
                         </div>
-                       
+
 
                         <div className="landingSliderBg" style={{backgroundImage:`url(/images/sliderb.jpg`}}>
                         <div className="container">
 
-                            <div className=" trueRow text-left">
-                            <h2 style={{fontSize:'48px',fontWeight:'700'}}>Mehran's Royal Comfort</h2>
+                            <div className=" trueRow web_slide_padding  text-left">
+                            <h2  style={{fontSize:'48px',fontWeight:'700'}}>Mehran's Royal Comfort</h2>
                                <h6 style={{fontSize:'22px'}}> The perfect mattress didn’t exist,so we <br/>  invented it.
                                 Experience extreme  comfort <br/> with
                               our Royal Comfort Spring Mattress</h6>

@@ -151,7 +151,7 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                    An exclusive chance to get associated with one of the leading brands in foam industry of Pakistan 
+                    An exclusive chance to get associated with one of the leading brands in foam industry of Pakistan
                     </h3>
                   </div>
                 </div>
@@ -163,7 +163,7 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                    Huge Trade Discount for the distributors
+                    Huge Trade Discounts for the distributors on bulk buying available on flexible terms and conditions
                     </h3>
                     {/* <p className="retailerDescriptionLite pl-2 pr-2">
                       {"\u25CF"} Bulk buying (in addition to trade discounts)
@@ -182,7 +182,7 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                    Earn exclusive loyalty points based on bulk buying and achieving monthly targets 
+                    Earn exclusive loyalty points based on bulk buying and on achieving monthly sales targets
                     </h3>
                     {/* <p className="retailerDescriptionLite pl-4 pr-4">
                       Our online Portal enables the top of range online ordering
@@ -199,7 +199,7 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                    Personalised Online Portal for orders 
+                    Personalised Online Portal account details given to each distributor for easy placement of online orders
                     </h3>
                   </div>
                 </div>
@@ -211,7 +211,7 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                    Dedicated account management and support
+                    A dedicated account management and support team assigned to each distributor's online account
                     </h3>
                   </div>
                 </div>
@@ -223,7 +223,7 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                    Exclusive content on request including offers and competitions for your audience
+                    Exclusive content and promotions on request including offers and competitions for your customers
 
                     </h3>
                   </div>
@@ -236,7 +236,7 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                    Market-specific marketing planning and execution
+                    Market-specific updated marketing research, planning and execution of distribution strategies
                     </h3>
                   </div>
                 </div>
@@ -248,8 +248,7 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                    Assortment: Full access to range of Chairman Foam mattresses and accessories across a discounted price range
-
+                    Full access to range of Chairman Foam mattresses and accessories across a discounted price range
                     </h3>
                   </div>
                 </div>
@@ -261,7 +260,7 @@ export default class Distributor extends Component{
                   </div>
                   <div className="retailerDescriptionBox">
                     <h3 className="retailerDescription">
-                    24/7 availability of  Chairman support team for assistance
+                    24/7 availability of Chairman customer and distributor support team for continuous assistance
                     </h3>
                   </div>
                 </div>

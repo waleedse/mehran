@@ -3,8 +3,11 @@ class PrivacyPolicy extends Component {
     render() {
         return (
             <div>
-                <div className="container">
-                    <h1 className="title-text text-center mb-3 mt-5">PRIVACY POLICY</h1>
+                  <div className="page_bg text-center page_header_padding">
+                    <h1 className="title-text page_title_ text-center ">PRIVACY POLICY</h1>
+                </div>
+                <div className="container mt-5">
+                    {/* <h1 className="title-text text-center mb-3 mt-5">PRIVACY POLICY</h1> */}
 
                     <div>
                         <h6 className="pages-text">

@@ -13,11 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-//Admin Routes 
+//Admin Routes
 
 
 //products Controller Routes
 Route::post('/get_admin_dash_data', 'Admin\productscontroller@get_admin_dash_data');
+Route::post('/upload_file', 'Admin\productscontroller@upload_file');
 
 Route::post('/addcategory', 'Admin\productscontroller@addcategory');
 Route::post('/update_category', 'Admin\productscontroller@update_category');
