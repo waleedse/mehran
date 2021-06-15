@@ -944,6 +944,7 @@ demo-div {
     border-radius: 0px;
     border: 0px solid #fff;
     width: 320px;
+    height: 380px;
 }
 
 .feature_product_img{
@@ -980,6 +981,9 @@ demo-div {
     border: 1px solid #fff;
     width: 100%;
     margin-top: 50px;
+    position: absolute;
+    top: 250px;
+    width: 285px;
 }
 
 /* cart css */
