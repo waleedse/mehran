@@ -74,7 +74,7 @@ export default class Projects extends Component {
                         <h2 className="feature_product_price mt-3"><NumberFormat value={data.cheep_varient.price} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} renderText={value => <div>{value}</div>} /></h2>
                         <h4 className="feature_product_des mt-3">{data.p_short_description}</h4>
 
-                        <button onClick={()=>{window.open(`/Product/${data.id}`)}} className="feature_product_btn">SHOP NOW</button>
+                        <button onClick={()=>{window.open(`/Product/${data.id}`,'_self')}} className="feature_product_btn">SHOP NOW</button>
                    </div>
                </div>
               )
