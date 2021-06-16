@@ -22,7 +22,7 @@ const OurLocationPage = () => {
             <div className="title">Customer Support</div>
             <div className="text">For any enquiries call us .</div>
             <div className="text mb-1"><FontAwesomeIcon icon={faPhone} color="#fff"  /> (042) 35441671</div>
-            <div className="text"><FontAwesomeIcon icon={faEnvelope} color="#fff"  /> info@chairmAnfoam.com</div>
+            <div className="text"><FontAwesomeIcon icon={faEnvelope} color="#fff"  /> info@chairmanfoam.com</div>
            </div>
            </div>
 
