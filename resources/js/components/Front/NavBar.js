@@ -18,7 +18,7 @@ import HeaderIem from "./HeaderComp/HeaderIem";
 
     };
   }
-   
+
   componentDidMount(){
     const url=this.props.history.location.pathname;
     console.log(url)
@@ -78,14 +78,15 @@ import HeaderIem from "./HeaderComp/HeaderIem";
               <HeaderIem   title="MATRESSES">
                 <AccountDropDown />
               </HeaderIem>
-              
+
               <a styles={{borderLeft:'0'}} class="navBarItem" href="/Products/15">HEALTHCARE</a>
               <a styles={{borderLeft:'0'}} class="navBarItem" href="/Products/24">ACCESSORIES</a>
               <a styles={{borderLeft:'0'}} class="navBarItem" href="/Aboutus">ABOUT US</a>
               <a styles={{borderLeft:'0'}} class="navBarItem" href="/faqs">FAQ's</a>
               <a styles={{borderLeft:'0'}} class="navBarItem" href="/contact-us">CONTACT US</a>
+              <a styles={{borderLeft:'0'}} class="navBarItem" href="/Cart">CART</a>
               {
-                this.state.islogin ? 
+                this.state.islogin ?
                 <a styles={{borderLeft:'0'}} class="navBarItem" href="/CustomerAccount">PROFILE</a>
                 :
               <a styles={{borderLeft:'0'}} class="navBarItem" href="/login">LOGIN</a>

@@ -71,7 +71,7 @@ class Cart extends Component {
         return (
             <div id="cart" className="container">
                 <div className="products_page ">
-                    <h2 className="page_title">Cart</h2>
+                    <h2 className="page_title mt-5">Cart</h2>
                 </div >
                 <div >
                 {

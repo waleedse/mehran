@@ -288,7 +288,7 @@ class Checkout extends React.Component  {
 
                 <div className="container">
                 <div classNameName="products_page ">
-                    <h2 className="page_title">Check Out</h2>
+                    <h2 className="page_title mt-5">Check Out</h2>
                 </div>
                 {
                     this.state.loading ?
