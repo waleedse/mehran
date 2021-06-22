@@ -31,6 +31,6 @@ class DistributorPassword extends Mailable
      */
     public function build()
     {
-        return $this->subject("Distributor Account Credentials")->view('emails.DistributorPassword')->from("demo.campusportal@gmail.com","Chairman Foam");
+        return $this->subject("Distributor Account Credentials")->view('emails.DistributorPassword')->from("info@chairmanfoam.com","Chairman Foam");
     }
 }

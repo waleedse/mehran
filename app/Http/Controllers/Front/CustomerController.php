@@ -44,7 +44,7 @@ class CustomerController extends Controller
         return $response;
     }
     public function PasswordReset(Request $request){
-        
+
         $data =  ForgotPassword::where('token', Crypt::decrypt( $request->id))->where('status',1)->first();
         if($data){
             $validator = Validator::make($request->all(), [
@@ -56,8 +56,8 @@ class CustomerController extends Controller
                 return $response;
             }else{
                 if($request->password == $request->confirm_password){
-                    $c =  Customer::where('email', $data->email)->first(); 
-                    $Customer = Customer::find($c->id);                     
+                    $c =  Customer::where('email', $data->email)->first();
+                    $Customer = Customer::find($c->id);
                     $Customer->password = $request->password;
                     $Customer->save();
                     $response = ['status' => 200 , 'msg' => 'Success - your password has been reset.'];
@@ -75,8 +75,8 @@ class CustomerController extends Controller
     public function ForgotPassword(Request $request){
         $c = Customer::where('email',$request->email)->first();
         if($c){
-            DB::table('forgotpasswords')->where('email', $request->email)->update(array('status' => '0'));  
-            $code=rand(1000,9999);	
+            DB::table('forgotpasswords')->where('email', $request->email)->update(array('status' => '0'));
+            $code=rand(1000,9999);
             $p = new ForgotPassword();
             $p->email = $request->email;
             $p->token = $code;
@@ -93,7 +93,7 @@ class CustomerController extends Controller
             return $response;
         }
     }
-   
+
     public function create_customer_order(Request $request){
         $cart = $this->get_cookie_session_cart($request);
         if($cart['status'] == 200){
@@ -110,10 +110,10 @@ class CustomerController extends Controller
         $neworder->subtotal = $request->cart_totals;
         $neworder->shipping = $request->Shipping;
         $neworder->discount = $request->discount;
-        $neworder->discount_id = $request->discount_id; 
+        $neworder->discount_id = $request->discount_id;
         $neworder->address = $request->address1 .' '. $request->address2;
         $neworder->status = 'Pending';
-        $neworder->save(); 
+        $neworder->save();
         foreach($cart['cart'] as $c){
             $order_product = new Order_Products();
             $order_product->order_id = $neworder->id;
@@ -127,10 +127,10 @@ class CustomerController extends Controller
             $order_product->save();
             $cart_cookie_id = $c->cart_cookie_id;
         }
-       
+
         $title = 'New Order Placed by Customer';
         $order = $neworder;
-        Mail::to("mehranorders@gmail.com")->send(new OrderMailVendor($order,$title));
+        Mail::to("orders@chairmanfoam.com")->send(new OrderMailVendor($order,$title));
         DB::table('carts')->where('cart_cookie_id',$cart_cookie_id)->delete();
         $response = ['status' => 200 , 'msg' => 'Order Placed SuccessFully'];
         return $response;
@@ -156,11 +156,11 @@ class CustomerController extends Controller
         $neworder->subtotal = $request->sub_cart_totals;
         $neworder->shipping = $request->Shipping;
         $neworder->discount = $request->discount;
-        $neworder->discount_id = $request->discount_id; 
+        $neworder->discount_id = $request->discount_id;
         $neworder->address = $request->address1 .' '. $request->address2;
         $neworder->status = 'Pending';
-        $neworder->save(); 
-        
+        $neworder->save();
+
             if($request->loyaltydiscount > 0){
                 $dis = Distributor::find($request->cus_id);
                 $dis->loyalty_points = 0;
@@ -169,7 +169,7 @@ class CustomerController extends Controller
             $points  = LoyaltyPoint::all();
             $loyalty_points = $points[0]->point / $points[0]->rs * $request->totals;
             $dis = Distributor::find($request->cus_id);
-            $dis->loyalty_points = (int) $loyalty_points; 
+            $dis->loyalty_points = (int) $loyalty_points;
             $dis->save();
             foreach($cart['cart'] as $c){
                 $order_product = new Dis_Order_Products();
@@ -186,7 +186,7 @@ class CustomerController extends Controller
             }
             $title = 'New Order Placed by Distributor';
             $order = $neworder;
-            Mail::to("mehranorders@gmail.com")->send(new OrderMailVendor($order,$title));
+            Mail::to("orders@chairmanfoam.com")->send(new OrderMailVendor($order,$title));
             DB::table('dis_carts')->where('cart_cookie_id',$cart_cookie_id)->delete();
             $response = ['status' => 200 , 'msg' => 'Order Placed SuccessFully'];
             return $response;
@@ -194,7 +194,7 @@ class CustomerController extends Controller
             $response = ['status' => 219 , 'msg' => 'Error- Cart is empty.'];
             return $response;
         }
-        
+
 
     }
     public function add_product_in_cart(Request $request){
@@ -300,7 +300,6 @@ class CustomerController extends Controller
         $cart->delete();
     }
     public function Add_new_customer(Request $request){
-
         $validator = Validator::make($request->all(), [
             'fname' => 'required|min:3',
             'email' => 'email|unique:customers,email|max:255',
@@ -355,7 +354,7 @@ class CustomerController extends Controller
         return $response;
         }
     }
-    
+
     public function update_customer(Request $request){
         $c = Customer::find($request->id);
         $c->status = $request->status;
@@ -369,7 +368,7 @@ class CustomerController extends Controller
         $customer = DB::table('customers')->where('id', 'like', '%' .$request->string. '%')
                     ->orWhere('email', 'like', '%' . $request->string . '%')
                     ->orWhere('name', 'like', '%' . $request->string . '%')->limit(100)->get();
-                   
+
         return $customer;
     }
     public function customer_login(Request $request){
@@ -386,7 +385,7 @@ class CustomerController extends Controller
                 $response = ['status' => 401 , 'msg' => 'Wrong Password'];
                 return $response;
             }
-            
+
         }else{
             $response = ['status' => 401 , 'msg' => 'Error- Wrong Username or email'];
             return $response;
@@ -397,7 +396,7 @@ class CustomerController extends Controller
         $c = DB::table('customers')->where('token',$request->token)
         ->get();
         if(sizeof($c) > 0){
-           
+
             $response = ['status' => 200 , 'cus' => $c];
             return $response;
         }else{

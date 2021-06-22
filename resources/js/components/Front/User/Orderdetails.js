@@ -20,7 +20,7 @@ class Orderdetails extends Component {
             console.log(res.data);
             this.setState({
                 order:res.data,
-               
+
             },function(){
                 this.setState({
                     loading:false
@@ -32,15 +32,15 @@ class Orderdetails extends Component {
         return (
             <div>
                 {
-                    
-                    this.state.loading ? 
+
+                    this.state.loading ?
                     <div id="displayspinner" style={{ display: 'block', marginLeft: '45%', marginTop: '10%' }}>
                              <div className="spinner-border text-info ml-2 spinner_format"  role="status">
                                  <span className="sr-only">Loading...</span>
                              </div>
                          </div>
-                     :<> 
-                     <div className="products_page container">
+                     :<>
+                     <div className="products_page container mt-5">
                      <h2 className="page_title">Order Details</h2>
                  </div>
                     <div className="container">
@@ -52,7 +52,7 @@ class Orderdetails extends Component {
                             <h4>#{this.state.order.id} </h4>
                             <h6>{this.state.order.date}</h6>
                             <h6>{this.state.order.status}</h6>
-                        </div>  
+                        </div>
                     </div>
                     <div className="col-md-7 mt-1 ml-2 left_border">
                         <h1 className="title_text">Address</h1>
@@ -61,7 +61,7 @@ class Orderdetails extends Component {
                         <h6>{this.state.order.phone}</h6>
                         <h6>{this.state.order.address}</h6>
                         <h6>{this.state.order.country}</h6>
-                    </div> 
+                    </div>
                     {/* <div className="col-md-2 mt-1 ml-2 left_border">
                         <h4>{this.state.distributor.address}</h4>
                         <h6>Distributor</h6>
@@ -89,7 +89,7 @@ class Orderdetails extends Component {
                                         </tr>
                                     </thead>
                                     {
-                                        this.state.order.products ? 
+                                        this.state.order.products ?
                                         <tbody>
 
 
@@ -105,7 +105,7 @@ class Orderdetails extends Component {
                                                         <td>{data.product.name}</td>
                                                         <td>{data.product.varients[0].name}</td>
                                                         <td>{data.qty}</td>
-                                                        <td>{data.price}<span style={{fontSize:'12px'}} className="text-small priceCancelText text-secondary">       
+                                                        <td>{data.price}<span style={{fontSize:'12px'}} className="text-small priceCancelText text-secondary">
                                                         {data.discount > 0 ? ' ( '+ data.original_price +' )' : null}
                                                         </span></td>
 
@@ -135,13 +135,13 @@ class Orderdetails extends Component {
                                                     </span>
                                                 </div>
                                                 <div>
-                                                    Discount 
+                                                    Discount
                                                     <span className="font-bold" style={{float:'right'}}>
                                                     <strong>  Rs, {this.state.order.discount} </strong>
                                                     </span>
                                                 </div>
                                                 <div>
-                                                    Shipping 
+                                                    Shipping
                                                     <span className="font-bold" style={{float:'right'}}>
                                                     <strong>  Rs, {this.state.order.shipping} </strong>
                                                     </span>
@@ -157,7 +157,7 @@ class Orderdetails extends Component {
                                                 {/* <span className="text-muted small">
                                                     *For United States, France and Germany applicable sales tax will be applied
                                                 </span> */}
-                                                
+
                                             </div>
                                         </div>
                 </div>

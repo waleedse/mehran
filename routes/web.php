@@ -10,10 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::view('/{path?}', 'welcome');
-Route::get('{reactRoutes}', function () {
-    return view('welcome');
-});
+
 
 Route::view('/Products/{id}', 'welcome');
 Route::view('/Product/{id}', 'welcome');
@@ -69,3 +66,11 @@ Route::view('/reset-password/{id}', 'welcome');
 Route::view('/distributor/forgot-password', 'welcome');
 Route::view('/distributor/reset-password/{id}', 'welcome');
 
+Route::view('/login/{redirect?}', 'welcome');
+
+Route::view('/', 'home');
+
+Route::view('/{path?}', 'welcome');
+Route::get('{reactRoutes}', function () {
+    return view('welcome');
+});

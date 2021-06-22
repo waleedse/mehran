@@ -22,6 +22,7 @@ class Products extends Component {
             })
         })
          Axios.post(baseurl+'/api/get_category_by_sub_cat_id',senderdata).then(res=>{
+             console.log(res);
             this.setState({
                 CategoryName:res.data[0].name,
                 sub_cat_image:res.data[0].image

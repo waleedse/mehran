@@ -33,8 +33,8 @@ class LoginPage extends Component {
   console.log(senderdata);
   Axios.post('/api/customer_login',senderdata).then(res=>{
     console.log(res);
-    
-   
+
+
     if(res.data.status == 200){
       let customer = {
         cid:res.data.cus.id,
@@ -67,7 +67,7 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="mt-5 container">
-        
+
         {/* <div className="row">
             <div className="col-md-3"></div> */}
         <div className="col-md-4 ml-auto mr-auto mt-3">

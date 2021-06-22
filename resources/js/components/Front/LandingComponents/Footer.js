@@ -55,35 +55,27 @@ export default class Footer extends Component {
 
 
             <div className="footerSocialBox">
-                <div className="footerSocialCircle">
-                  <a href="https://www.facebook.com/chairmanfoam/">
+            <a href="https://www.facebook.com/chairmanfoam/">
                   <img
-                    src="/images/socialIcon1.png"
+                    src="https://image.flaticon.com/icons/png/512/145/145802.png"
                     alt="social"
                     className="footerSocialImage"
                   ></img>
                   </a>
-                </div>
-                <div className="footerSocialCircle text-center">
-                <a href="https://www.instagram.com/chairmanfoam/?igshid=7pcd3d8n7uuw">
-                  {/* <img
-                    src="/images/socialIcon2.png"
+                  <a href="https://www.instagram.com/chairmanfoam/?igshid=7pcd3d8n7uuw">
+                  <img
+                    src="https://image.flaticon.com/icons/png/512/2111/2111463.png"
                     alt="social"
                     className="footerSocialImage"
-                  ></img> */}
-                  <i className="fab fa-instagram text-light  pt-2"></i>
+                  ></img>
                   </a>
-                </div>
-                <div className="footerSocialCircle text-center">
-                <a href="mailto:info@chairmanfoam.com">
-                  {/* <img
-                    src="/images/socialIcon2.png"
+                  <a href="mailto:info@chairmanfoam.com">
+                  <img
+                    src="https://image.flaticon.com/icons/png/512/552/552486.png"
                     alt="social"
                     className="footerSocialImage"
-                  ></img> */}
-                  <i className="far fa-envelope text-light  pt-2"></i>
+                  ></img>
                   </a>
-                </div>
                 {/* <div className="footerSocialCircle">
                     <a href="https://www.facebook.com/chairmanfoam/">
                   <img

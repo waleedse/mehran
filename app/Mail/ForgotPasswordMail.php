@@ -19,7 +19,7 @@ class ForgotPasswordMail extends Mailable
     public function __construct($link,$title,$subtitle)
     {
         // $this->$code = $code;
-        view()->share('link', $link);        
+        view()->share('link', $link);
         view()->share('title', $title);
         view()->share('subtitle', $subtitle);
 

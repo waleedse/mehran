@@ -18,6 +18,7 @@ import HomeIndex from '../Index';
 import ContactUs from '../Pages/OurLocationPage/OurLocationPage';
 import Login from '../Pages/Auth/Login';
 import SignUp from '../Pages/Auth/SignUp';
+import OrderDetails from '../User/Orderdetails';
 
 class Index extends Component {
     constructor(props) {
@@ -53,8 +54,9 @@ class Index extends Component {
                 <Route  exact path="/Cart"  component={Cart}/>
                 <Route  exact path="/Checkout"  component={Checkout}/>
                 <Route  exact path="/contact-us"  component={ContactUs}/>
-                <Route  exact path="/login"  component={Login}/>
+                <Route  exact path="/login/:redirect?"  component={Login}/>
                 <Route  exact path="/signup"  component={SignUp}/>
+                <Route  exact path="/order-details"  component={OrderDetails}/>
                 <Footer></Footer>
             </div>
         );

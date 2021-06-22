@@ -19,7 +19,7 @@ class OrderMailVendor extends Mailable
     public function __construct($order,$title)
     {
         // $this->$code = $code;
-        view()->share('order', $order);        
+        view()->share('order', $order);
         view()->share('title', $title);
     }
 

@@ -1948,6 +1948,7 @@ a.list-group-item, .list-group-item-action {
   .footerSocialImage {
     padding: 12px;
     cursor: pointer;
+    width: 50px;
   }
   .footerSocialCircle:hover {
     background-color: #343434;

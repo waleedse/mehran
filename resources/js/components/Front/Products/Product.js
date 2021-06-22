@@ -259,7 +259,7 @@ class Products extends Component {
             this.state.product_values.map((data,index)=>{
               return(
                         <div className="row feature-row mt-4">
-                            <h1 className="col-lg-1 ml-5"></h1>
+                            {/* <h1 className="col-lg-1 ml-5"></h1> */}
                             <div className="col-lg-4 col-md-6 col-sm-12">
                                 <div className="featureValueBox text-dark text-center">
                                     <img className="ValueIcon " src={img_baseurl+data.image}></img>

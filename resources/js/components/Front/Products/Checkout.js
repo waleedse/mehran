@@ -42,6 +42,41 @@ class Checkout extends React.Component  {
                 cities:res.data
             })
         })
+        let data = {
+            token:window.localStorage.getItem('key1')
+          }
+        Axios.post('/api/check_customer_auth',data).then(res=>{
+
+            if(res.data.status == 200){
+               this.setState({
+                customer:res.data.cus[0],
+
+                    firstName:res.data.cus[0].fname,
+                    lastName:res.data.cus[0].lname,
+                    email:res.data.cus[0].email,
+                    address1:res.data.cus[0].address,
+                    phone:res.data.cus[0].phone,
+                    cus_id:res.data.cus[0].id,
+                    // postcode:res.data.cus[0].postcode,
+                    city:res.data.cus[0].city,
+                    loading:false,
+               },function(){
+                this.setState({
+                    loading:false
+                })
+               })
+            }else{
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Sorry You Are not logged in Please Login.',
+                    showConfirmButton: false,
+                    timer: 1500
+                    })
+                this.props.history.push('/login/Checkout');
+            }
+
+          })
         setTimeout(()=>{
             let senderdata = {
                 cart_cookie_id : window.localStorage.getItem('cart_cookie_id')

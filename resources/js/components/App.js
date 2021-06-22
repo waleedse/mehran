@@ -30,7 +30,7 @@ class App extends React.Component {
             routes:['/Products/:id','/Product/:id','/Aboutus',
             '/Shop','/faqs','/PrivacyPolicy','/TermsAndconditions',
             '/CustomerAccount','/Cart','/Checkout','/order-details',
-            '/contact-us','/login','/signup'
+            '/contact-us','/login/:redirect?','/signup'
         ],
         disRoutes:['/distributor','/distributor/Products/:id','/distributor/product/:id'
         ,'/distributor/cart','/distributor/login','/distributor/signup','/distributor/account',
