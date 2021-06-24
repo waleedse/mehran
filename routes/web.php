@@ -68,7 +68,7 @@ Route::view('/distributor/reset-password/{id}', 'welcome');
 
 Route::view('/login/{redirect?}', 'welcome');
 
-Route::view('/', 'home');
+// Route::view('/', 'home');
 
 Route::view('/{path?}', 'welcome');
 Route::get('{reactRoutes}', function () {

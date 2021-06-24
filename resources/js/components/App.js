@@ -43,7 +43,7 @@ class App extends React.Component {
   render(){
   return (
     <BrowserRouter  >
-      <div className="main_div">
+      <div className="main_div" style={{overflowX:'hidden'}} >
         <Switch>
           <Route  path="/adminpanel"  component={AdminSidebar}/>
 

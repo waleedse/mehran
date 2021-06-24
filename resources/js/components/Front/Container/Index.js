@@ -36,7 +36,7 @@ class Index extends Component {
       };
     render() {
         return (
-            <div>
+            <div style={{overflowX:'hidden'}}>
                 <NavBar  handleSideBar={this.handleSideBar.bind(this)} ></NavBar>
                 <HeaderMobile
                 active={this.state.sideBar}

@@ -16,7 +16,7 @@ export default class journey extends Component {
               {/* <span className="redDivider"></span> */}
               Journey Begins Here
             </hi>
-            <p className="text-secondary justify-content mt-5 text-light">
+            <p className="text-secondary justify-content mt-2 py-3 text-light">
              We want people to sleep better so they can live better. We offer our customers a premium sleeping
               solution at a fraction of the cost of a traditional mattress and provide a world-class customer experience
               that is hassle and stress free.

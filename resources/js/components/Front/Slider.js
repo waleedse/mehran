@@ -35,7 +35,7 @@ class Slider extends Component {
                         <div className="container">
 
                         <div className=" trueRow text-center">
-                        <h2 style={{fontSize:'38px',fontWeight:'700',paddingTop:'180px'}}>Good Sleep Starts with <br></br>Chairman Foam</h2>
+                        <h2 className="slide1_text" >Good Sleep Starts with <br></br>Chairman Foam</h2>
                         {/* <h6 style={{fontSize:'22px text-center'}}>Good Sleep Starts with Chairman Foam</h6> */}
                         </div>
                         </div>
@@ -45,10 +45,10 @@ class Slider extends Component {
                         <div className="landingSliderBg" style={{backgroundImage:`url(/images/sliderb.jpg`}}>
                         <div className="container">
 
-                            <div className=" trueRow web_slide_padding  text-left">
+                            <div className=" trueRow web_slide_padding mob_slide2_padding  text-left" >
                             <h2  style={{fontSize:'48px',fontWeight:'700'}}>Mehran's Royal Comfort</h2>
-                               <h6 style={{fontSize:'22px'}}> The perfect mattress didn’t exist,so we <br/>  invented it.
-                                Experience extreme  comfort <br/> with
+                               <h6 className="slide2_des col-md-4 px-0" style={{fontSize:'22px',textAlign:'left'}}> The perfect mattress didn’t exist,so we   invented it.
+                                Experience extreme  comfort  with
                               our Royal Comfort Spring Mattress</h6>
                             </div>
                             </div>
@@ -58,8 +58,8 @@ class Slider extends Component {
 
                             <div className=" trueRow text-left">
                             <h2 style={{fontSize:'48px',fontWeight:'700'}}>Chairman Orthopaedic</h2>
-                               <h6 style={{fontSize:'22px'}}>
-                               An exquisite orthopaedic mattress <br/>range designed for an optimum <br/>alignment of your body
+                               <h6 className="col-md-5 px-0" style={{fontSize:'22px'}}>
+                               An exquisite orthopaedic mattress range designed for an optimum alignment of your body
                               </h6>
                             </div>
                             </div>

@@ -303,15 +303,22 @@
   background-color: #F3F8FB;
 }
 @media screen and (max-width:480px){
+    .slide1_text{
+        font-size: 30px !important;
+        padding-top: 280px !important;
+    }
+    .product_tile_card{
+        width: 390px !important;
+    }
     #navbarSupportedContent{
         height: 300px !important;
     }
     .trueRow{
         padding-top: 30px !important;
     }
-    .product_margin{
+    /* .product_margin{
         margin-left: 15px;
-    }
+    } */
     .mob_left{
       text-align: left !important;
     }
@@ -320,6 +327,8 @@
     }
     .landingSliderBg{
         /* height: 585px !important; */
+
+
     }
     .responsibiltyRow {
       margin-top: 0 !important;
@@ -816,7 +825,9 @@ demo-div {
     overflow: scroll !important;
     margin-left: 20px !important;
   }
-
+  .mob_slide2_padding{
+      padding-top: 115vw !important;
+  }
   .dreamImage {
     height: 250px;
   }
@@ -1884,6 +1895,11 @@ a.list-group-item, .list-group-item-action {
     height: 760px;
     width: 100%;
   }
+.slide1_text{
+    font-size: 38px;
+    font-weight: 700;
+    padding-top: 180px;
+}
   .product_tile_card{
       height: 500px;
       width: 350px;
