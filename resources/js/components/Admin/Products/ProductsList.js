@@ -12,7 +12,7 @@ class ProductsList extends Component {
             search_string:''
         }
     }
-    
+
     componentDidMount(){
         let senderdata={
 
@@ -28,7 +28,7 @@ class ProductsList extends Component {
             id:id
         }
         Axios.post(baseurl+'/api/deleteproduct',senderdata).then(res=>{
-           
+
             var products = this.state.products;
             products.splice(i,1);
             this.setState({
@@ -57,15 +57,15 @@ class ProductsList extends Component {
             <div >
                <div className="top_section_title_div">
                     <h2 className="section_title">Products List</h2>
-                </div> 
+                </div>
 
                 <div className="container-fluid">
                 <div className="card content_card_div mt-4 mb-5">
-                        
+
                             <div class="form-group input_div col-md-12">
                                 <div className="row mb-2">
                                     <div className="col-md-10">
-                                        <input type="email" onChange={this.search.bind(this)} class="form-control ml-1 mt-2" 
+                                        <input type="email" onChange={this.search.bind(this)} class="form-control ml-1 mt-2"
                                         aria-describedby="emailHelp" placeholder="Search by Id, code, Name" />
                                     </div>
                                     <div className="col-md-2">
@@ -73,7 +73,7 @@ class ProductsList extends Component {
                                     </div>
                                 </div>
                             </div>
-                       
+
                         </div>
                     <div className="card content_card_div mt-4 mb-5">
                         <table className="table table-hover table-bordered table-striped">
@@ -103,7 +103,7 @@ class ProductsList extends Component {
                                                 <td>{data.varient_type}</td>
                                                 <td>{data.enabled == 1 ? 'Enabled' : 'Disabled'}</td>
                                                 <td>
-                                                    <MDBDropdown basic style={{left:'70px'}}>
+                                                    <MDBDropdown basic style={{left:'70px'}} id='dp'>
                                                     <MDBDropdownToggle style={{padding:'2px'}}   color="light">
                                                        <li style={{fontSize:'20px',color:'#588da8',}} className="fas fa-bars"></li>
                                                     </MDBDropdownToggle>
@@ -112,7 +112,7 @@ class ProductsList extends Component {
                                                         <MDBDropdownItem><Link to={`/adminpanel/ProductValues/${data.id}`}>Product Keys</Link></MDBDropdownItem>
                                                         <MDBDropdownItem><Link to={`/adminpanel/ProductImages/${data.id}`}>Product Images</Link></MDBDropdownItem>
 
-                                                        {/* <MDBDropdownItem onClick={this.DeleteProduct.bind(this,data.id,index)} className="text-danger">Delete</MDBDropdownItem> */}
+                                                        <MDBDropdownItem onClick={this.DeleteProduct.bind(this,data.id,index)} className="text-danger">Delete</MDBDropdownItem>
                                                     </MDBDropdownMenu>
                                                     </MDBDropdown>
                                                 </td>
@@ -124,13 +124,13 @@ class ProductsList extends Component {
                                     })
                                 }
                                 {
-                                    this.state.products.length == 0 ? 
+                                    this.state.products.length == 0 ?
                                     <tr><td colSpan="8">No records founded</td></tr>:null
                                 }
                             </tbody>
                         </table>
                     </div>
-                </div>    
+                </div>
             </div>
         );
     }

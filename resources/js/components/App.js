@@ -1,19 +1,9 @@
 import React from 'react';
 import AdminSidebar from './Admin/Admin_Sidebar';
 import { Switch,BrowserRouter,Route} from 'react-router-dom';
-// import Index from './Front/Index';
-// import Products from './Front/Products/Products';
-// import AboutUs from './Front/Aboutus';
-// import Shop from './Front/Products/Shop';
-// import Product from './Front/Products/Product';
-// import CustomerAccount from './Front/User/CustomerAccount';
-// import Cart from './Front/Products/Cart';
-// import Checkout from './Front/Products/Checkout';
-// import Faq from './Front/Pages/Faq';
-// import PrivacyPolicy from './Front/Pages/PrivacyPolicy';
-// import Termsandcon from './Front/Pages/TermsandConditions';
+
 import AdminLogin from './Admin/Login';
-import Orderdetails from './Front/User/Orderdetails';
+// import Orderdetails from './Front/User/Orderdetails';
 // import Adminoderdetails from './Admin/Orders/Orderdetails';
 
 import ForgotPassword from './Front/User/ForgotPassword';

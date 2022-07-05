@@ -21,9 +21,9 @@ export default class Footer extends Component {
               <h3 className="footerTitle">Registered Office</h3>
               <p className="footerText">
                 Chairman Foam <br />
-                64 Block M, Gulberg III,  Lahore, Punjab
+              23-D,C-2 Wapda colony Mirpur,Azad Kashmir.
                 <br></br>
-                +92-42-3544-1671 ,  +92-42-3544-1672
+                +92-5827 468144
               </p>
 
             </div>
@@ -93,7 +93,7 @@ export default class Footer extends Component {
         </div>
         <div className="row footerRightsRow">
           <h5 className="footerRightsText">
-            Copyright 2021 {"\u00A9"} Chairman Foam All Right Reserved
+            Copyright 2022 {"\u00A9"} Chairman Foam All Right Reserved
           </h5>
         </div>
 
